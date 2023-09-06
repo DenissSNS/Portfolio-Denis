@@ -15,9 +15,9 @@ const t = useTranslations(lang);
 
 <header>
 	<nav>
-		<h4><a href={`/`}>{SITE_TITLE}</a></h4>
+		<h4><a href={`/${lang}`}>{SITE_TITLE}</a></h4>
 		<div class="internal-links">
-			<HeaderLink href={`/`}>{t('nav.home')}</HeaderLink>
+			<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
 			<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
 		</div>
 		<ToggleDarkLight />

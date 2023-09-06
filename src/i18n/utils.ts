@@ -17,9 +17,7 @@ export function useTranslations(lang: keyof typeof ui) {
 export function getRouteFromUrl(url: URL): string | undefined {
   const pathname = new URL(url).pathname; // l'url => /fr/about
   const parts = pathname.split("/"); // [ '' , 'fr' ]
-  const path = parts.pop(); // pop() supprime le dernier élément d'un tableau et retourne cet élément.
-
-  console.log("pathname", pathname, "parts", parts, "path", path);
+  const path = parts.pop() || parts.pop(); // pop() supprime le dernier élément d'un tableau et retourne cet élément.
 
   if (parts.length === 1) {
     return "";
