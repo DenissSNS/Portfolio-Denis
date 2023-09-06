@@ -1,0 +1,62 @@
+// global
+:root {
+  --white: #efefef;
+  --soft-white: #c4d5d8;
+  --black: #131313;
+  --soft-black: #2d3132;
+
+  --gold-light: #ffd700;
+  --gold-dark: #ff8000;
+
+  --blue-light: #00d0ff;
+  --blue-dark: #00d0ff;
+
+  --violet-light: #c838e9;
+  --violet-dark: #c838e9;
+
+  // ---
+
+  --box-shadow: 0 2px 6px rgba(var(--soft-black), 25%),
+    0 8px 24px rgba(var(--soft-black), 33%),
+    0 16px 32px rgba(var(--soft-black), 33%);
+
+  // ---
+
+  --font-title: serif;
+  --font-text: sans-serif;
+
+  --fs-h1: 5rem;
+  --fw-h1: 800;
+  --fs-h2: 3rem;
+  --fw-h2: 700;
+  --fs-h3: 2.5rem;
+  --fw-h3: 600;
+  --fs-h4: 2rem;
+  --fw-h4: 500;
+}
+
+// light theme
+:root {
+  --background: var(--white);
+  --background-soft: var(--soft-white);
+
+  --color: var(--black);
+  --color-soft: var(--soft-black);
+
+  --gold: var(--gold-dark);
+  --blue: var(--blue-dark);
+  --violet: var(--violet-dark);
+}
+
+// dark theme
+.dark-theme {
+  --background: var(--black);
+  --background-soft: var(--soft-black);
+
+  --color: var(--white);
+  --color-soft: var(--soft-white);
+
+  --gold: var(--gold-light);
+  --blue: var(--blue-dark);
+  --violet: var(--violet-dark);
+}

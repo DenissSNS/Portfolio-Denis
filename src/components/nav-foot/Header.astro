@@ -1,0 +1,31 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import ToggleDarkLight from './ToggleDarkLight.astro';
+import ToggleLanguage from './ToggleLanguage.astro';
+
+import { SITE_TITLE } from '../../consts';
+
+import "./header.scss"
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header>
+	<nav>
+		<h4><a href={`/`}>{SITE_TITLE}</a></h4>
+		<div class="internal-links">
+			<HeaderLink href={`/`}>{t('nav.home')}</HeaderLink>
+			<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
+		</div>
+		<ToggleDarkLight />
+		<ToggleLanguage />
+		<div class="social-links">
+			<a href="https://www.google.fr/" target="_blank">
+				Test
+			</a>
+		</div>
+	</nav>
+</header>

@@ -1,0 +1,21 @@
+footer {
+  padding: 2rem;
+  background: var(--background-soft);
+  color: var(--color);
+  text-align: center;
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-soft);
+      }
+    }
+  }
+}

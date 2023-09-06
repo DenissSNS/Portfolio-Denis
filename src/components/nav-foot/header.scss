@@ -1,0 +1,26 @@
+header {
+  padding: 0 1rem;
+  background: var(--background-soft);
+  box-shadow: 0 2px 8px rgba(var(--color-soft), 5%);
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    a {
+      padding: 0.5rem;
+      border-bottom: 4px solid transparent;
+
+      &.active {
+        font-weight: bolder;
+        border-bottom-color: var(--color);
+      }
+    }
+  }
+}
