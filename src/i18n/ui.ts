@@ -9,13 +9,15 @@ export const showDefaultLang = true;
 export const ui = {
   en: {
     "nav.home": "Home",
-    "nav.about": "About",
+    "nav.contact": "Contact",
+    "nav.live": "Live",
 
     "home.title": "ENG",
   },
   fr: {
     "nav.home": "Accueil",
-    "nav.about": "À propos",
+    "nav.contact": "Contact",
+    "nav.live": "Live",
 
     "home.title": "TEST",
   },

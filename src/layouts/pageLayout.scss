@@ -1,0 +1,16 @@
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+
+  width: calc(100% - 2em);
+  max-width: 100%;
+
+  .title {
+    text-align: center;
+    color: var(--color);
+  }
+}

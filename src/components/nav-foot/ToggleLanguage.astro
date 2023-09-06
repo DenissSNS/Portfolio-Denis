@@ -4,11 +4,12 @@ import { languages } from '../../i18n/ui';
 import {getRouteFromUrl} from "../../i18n/utils"
 const route = getRouteFromUrl(Astro.url);
 
+import "./toggleLanguage.scss"
+
 ---
-<ul>
+
+<div class="toggleLang">
   {Object.entries(languages).map(([lang, label]) => (
-    <li>
       <a href={`/${lang}/${route}`}>{label}</a>
-    </li>
   ))}
-</ul>
+</div>

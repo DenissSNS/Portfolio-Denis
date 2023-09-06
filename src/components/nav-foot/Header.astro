@@ -17,15 +17,12 @@ const t = useTranslations(lang);
 	<nav>
 		<h4><a href={`/${lang}`}>{SITE_TITLE}</a></h4>
 		<div class="internal-links">
-			<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
-			<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
+			<HeaderLink href={`/${lang}/contact`}>{t('nav.contact')}</HeaderLink>
+			<HeaderLink href={`/${lang}/live`}>{t('nav.live')}</HeaderLink>
 		</div>
-		<ToggleDarkLight />
-		<ToggleLanguage />
-		<div class="social-links">
-			<a href="https://www.google.fr/" target="_blank">
-				Test
-			</a>
+		<div class="toggles">
+			<ToggleDarkLight />
+			<ToggleLanguage />
 		</div>
 	</nav>
 </header>

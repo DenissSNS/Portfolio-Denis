@@ -13,14 +13,24 @@ header {
       margin: 0;
       font-size: 1rem;
     }
-    a {
-      padding: 0.5rem;
-      border-bottom: 4px solid transparent;
 
-      &.active {
-        font-weight: bolder;
-        border-bottom-color: var(--color);
+    .internal-links {
+      a {
+        padding: 0.5rem;
+        border-bottom: 4px solid transparent;
+
+        &.active {
+          font-weight: bolder;
+          border-bottom-color: var(--color);
+        }
       }
+    }
+
+    .toggles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
     }
   }
 }
