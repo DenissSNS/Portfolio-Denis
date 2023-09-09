@@ -23,7 +23,7 @@ body {
   background: var(--background);
   color: var(--color);
 
-  font-size: 1rem;
+  font-size: var(--fs-text);
   font-family: var(--font-text);
 
   word-wrap: break-word;
@@ -43,27 +43,23 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-title);
+  font-family: var(--font-title-bold);
 }
 
 h1 {
   font-size: var(--fs-h1);
-  font-weight: var(--fw-h1);
 }
 
 h2 {
   font-size: var(--fs-h2);
-  font-weight: var(--fw-h2);
 }
 
 h3 {
   font-size: var(--fs-h3);
-  font-weight: var(--fw-h3);
 }
 
 h4 {
   font-size: var(--fs-h4);
-  font-weight: var(--fw-h4);
 }
 
 button {
@@ -73,7 +69,7 @@ button {
 
 a {
   text-decoration: none;
-  color: blue;
+  color: inherit;
 }
 
 ol,

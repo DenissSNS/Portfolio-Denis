@@ -1,24 +1,25 @@
 export const languages = {
-  en: "EN",
   fr: "FR",
+  en: "EN",
 };
 
 export const defaultLang = "fr";
 export const showDefaultLang = true;
 
 export const ui = {
-  en: {
-    "nav.home": "Home",
-    "nav.contact": "Contact",
-    "nav.live": "Live",
-
-    "home.title": "ENG",
-  },
   fr: {
-    "nav.home": "Accueil",
     "nav.contact": "Contact",
-    "nav.live": "Live",
+    "nav.live": "Liens",
 
-    "home.title": "TEST",
+    "hireMe.title": "JE VEND MON CUL",
+    "hireMe.accroche":
+      "Je suis à la recherche du prochain poste idéal pour étendre mes horizons artistiques",
+  },
+  en: {
+    "nav.contact": "Contact",
+    "nav.live": "Links",
+
+    "hireMe.title": "I SELL MY BUTT",
+    "hireMe.accroche": "Yes please continue",
   },
 } as const;

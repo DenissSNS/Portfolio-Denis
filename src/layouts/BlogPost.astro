@@ -6,11 +6,10 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 import "./blogPost.scss"
 
-const { title, description, pubDate, heroImage } = Astro.props;
+const { title, description, pubDate, heroImage, tags } = Astro.props;
 
 import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
-
 
 ---
 
@@ -36,7 +35,7 @@ const lang = getLangFromUrl(Astro.url);
 						<hr />
 					</div>
 					<!-- article en lui-même  -->
-					<slot /> 
+					<slot />
 			</article>
 		</main>
 		<Footer />

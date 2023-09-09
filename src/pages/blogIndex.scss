@@ -1,27 +1,17 @@
-main {
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  text-align: center;
 
-  width: calc(100% - 2em);
-  max-width: 100%;
-
-  ul {
+  main {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
 
-    li {
-      width: calc(50% - 1rem);
-
-      &:first-child {
-        width: 80%;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-    }
+    margin: 45px 0;
+    max-width: 1276px;
   }
 }

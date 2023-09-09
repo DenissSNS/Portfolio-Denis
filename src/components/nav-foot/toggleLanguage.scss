@@ -5,7 +5,23 @@
   gap: 0.25rem;
 
   padding: 0.5rem;
+  position: relative;
 
-  border: 1px solid var(--color);
-  border-radius: 50px;
+  h4 {
+    text-transform: uppercase;
+  }
+
+  .langues {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+
+    display: none;
+  }
+
+  &:hover {
+    .langues {
+      display: block;
+    }
+  }
 }

@@ -1,27 +1,17 @@
 ---
+import "../blogIndex.scss"
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/nav-foot/Header.astro';
 import Footer from '../../components/nav-foot/Footer.astro';
 
-import FormattedDate from '../../components/FormattedDate.astro';
+import AllPosts from '../../components/AllPosts.astro';
+import HireMe from "../../components/HireMe.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-
-import "../blogIndex.scss"
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
-
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { getLangFromUrl} from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
-
-<!-- <meta http-equiv="refresh" content="0;url=/en/
-about" /> -->
 
 <!DOCTYPE html>
 <html lang={lang}>
@@ -32,23 +22,10 @@ about" /> -->
 	<body>
 		<Header />
 		<main>
-			<h1>{t('home.title')}</h1>
-			<ul>
-				{
-					posts.map((post) => (
-						<li>
-							<a href={`/${post.slug}`}>
-								<img width={720} height={360} src={post.data.heroImage} alt="" />
-								<h4 class="title">{post.data.title}</h4>
-								<p class="date">
-									<FormattedDate date={post.data.pubDate} />
-								</p>
-							</a>
-						</li>
-					))
-				}
-			</ul>
+			<HireMe />
+			<AllPosts />
 		</main>
 		<Footer />
 	</body>
 </html>
+

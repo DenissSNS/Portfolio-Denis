@@ -1,0 +1,82 @@
+---
+import "./allPostsWork.scss"
+import "./allPostsOpinion.scss"
+
+import FormattedDate from './FormattedDate.astro';
+import DCard from "./DCard.astro"
+
+import { getLangFromUrl} from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+import { getCollection } from 'astro:content';
+
+const postsWork = (await getCollection('blog'))
+.filter((each) => each.data.type == "work")
+.filter((each) => each.id.split('/')[0]  === lang)
+.sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+const postsOpinions = (await getCollection('blog'))
+.filter((each) => each.data.type === "opinion")
+.filter((each) => each.id.split('/')[0]  === lang)
+.sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+---
+
+<ul class="work">
+	{
+		postsWork.map((post) => (
+			<li>
+				<a href={`/${post.slug}`}>
+					<img src={post.data.heroImage} alt="img" />
+
+					<div class="text">
+						<span class="date">
+							· <FormattedDate date={post.data.pubDate} />
+						</span>
+						<h3 class="title">{post.data.title}</h3>
+						<p class="desc">
+							{post.body}
+						</p>
+						<div class="bottom">
+							<span class="tags">{post.data.tags}</span>
+							<span class="right">O</span>
+						</div>
+					</div>
+				</a>
+			</li>
+		))
+	}
+</ul>
+
+<div class="spacer">
+	<ul class="opinion">
+		{
+			postsOpinions.map((post) => (
+				<li>
+					<a href={`/${post.slug}`}>
+						<img src={post.data.heroImage} alt="img" />
+
+						<div class="text">
+							<span class="date">
+								· <FormattedDate date={post.data.pubDate} />
+							</span>
+							<h3 class="title">{post.data.title}</h3>
+							<p class="desc">
+								{post.body}
+							</p>
+							<div class="bottom">
+								<span class="tags">{post.data.tags}</span>
+								<span class="right">O</span>
+							</div>
+						</div>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<DCard />
+</div>
