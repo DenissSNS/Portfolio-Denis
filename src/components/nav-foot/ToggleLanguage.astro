@@ -8,17 +8,23 @@ const route = getRouteFromUrl(Astro.url);
 
 const lang = getLangFromUrl(Astro.url);
 
-
 ---
 
-
 <div class="toggleLang">
-  <h4>{lang} V</h4>
-  <div class="langues">
-    {Object.entries(languages).map(([lang, label]) => (
-      <a href={`/${lang}/${route}`}>
-        <h4>{label}</h4>
-      </a>
-    ))}
-  </div>
+
+    <h4>{lang}
+
+      <div class="container-langues">
+        <div class="langues">
+          {Object.entries(languages).map(([lang, label]) => (
+            <a href={`/${lang}/${route}`}>
+              <h4>{label}</h4>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </h4>
+    <img src="/favicon.svg" alt="drop-down">
+
 </div>

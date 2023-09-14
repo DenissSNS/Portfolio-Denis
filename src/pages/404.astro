@@ -1,0 +1,26 @@
+---
+import "./404.scss"
+import BaseHead from '../components/BaseHead.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { getLangFromUrl } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	
+	<body>
+		<main>
+
+			<p>OH NO ! This page doesn't exist.</p>
+			<a href={`/fr`}>Anyway, can you click here please ?</a>
+
+		</main>
+	</body>
+</html>
+

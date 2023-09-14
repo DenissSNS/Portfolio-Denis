@@ -9,12 +9,11 @@ header {
     justify-content: space-between;
     gap: 45px;
 
-    height: 60px;
     width: 1276px;
     font-family: var(--font-title-medium);
 
     .parts {
-      height: 60px;
+      height: 50px;
       padding: 0 45px;
 
       background: var(--grey);
@@ -42,12 +41,12 @@ header {
       &.internal-links {
         a {
           text-transform: uppercase;
+          transform: translateY(2px); // pour centrer avec le border-bottom
 
-          // border-bottom: 4px solid transparent;
-          // &.active {
-          //   font-weight: bold;
-          //   border-bottom-color: var(--color);
-          // }
+          border-bottom: 4px solid transparent;
+          &.active {
+            border-bottom-color: var(--grey2);
+          }
         }
       }
 
