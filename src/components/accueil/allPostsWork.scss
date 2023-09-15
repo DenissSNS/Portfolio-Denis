@@ -8,7 +8,7 @@ ul.work {
   li {
     width: 400px;
     height: 542px;
-    background-color: var(--background-soft);
+    background-color: var(--background-cards);
     border-radius: var(--radius);
 
     img {
@@ -51,7 +51,7 @@ ul.work {
           height: 50px;
           background: linear-gradient(
             to top,
-            var(--background-soft),
+            var(--background-cards),
             transparent
           );
           z-index: 2;

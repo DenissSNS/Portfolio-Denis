@@ -14,7 +14,7 @@
     li {
       width: 901px;
       height: 200px;
-      background-color: var(--background-soft);
+      background-color: var(--background-cards);
       border-radius: var(--radius);
 
       a {
@@ -62,7 +62,7 @@
               height: 50px;
               background: linear-gradient(
                 to top,
-                var(--background-soft),
+                var(--background-cards),
                 transparent
               );
               z-index: 2;
