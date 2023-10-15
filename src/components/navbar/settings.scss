@@ -1,0 +1,38 @@
+.icon-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    padding: 35px 0rem; // pour rejoindre le cardre des langues
+
+    .toggleSettings {
+      display: block;
+    }
+  }
+
+  .toggleSettings {
+    position: absolute;
+    top: 50px;
+    left: -200%;
+    background: var(--button);
+    border: 5px solid var(--background-cards);
+    border-radius: 12px;
+    padding: 23px;
+
+    display: none;
+
+    // .langues {
+    //   padding: 18px 45px;
+    // }
+
+    // &:hover {
+    //   .container-langues {
+    //     display: block;
+    //   }
+    // }
+  }
+}

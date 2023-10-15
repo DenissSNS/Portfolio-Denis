@@ -1,8 +1,7 @@
 ---
 import "./header.scss"
 import HeaderLink from './HeaderLink.astro';
-import ToggleDarkLight from './ToggleDarkLight.astro';
-import ToggleLanguage from './ToggleLanguage.astro';
+import Settings from "./Settings.astro";
 import Liens from "./Liens.astro";
 
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
@@ -17,8 +16,8 @@ const t = useTranslations(lang);
 		</div>
 		
 		<div class="parts toggles">
-			<ToggleLanguage />
-			<ToggleDarkLight />
+			<img src="/icons/search.svg" alt="search" width="20px" height="20px" >
+			<Settings />
 		</div>
 
 		<div class="parts internal-links">
