@@ -1,37 +1,34 @@
 ---
 import "./allPostsWork.scss"
-import "./allPostsOpinion.scss"
+// import "./allPostsOpinion.scss"
 
 import FormattedDate from '../FormattedDate.astro';
-import DCard from "../accueil/DCard.astro"
+import NextPage from "./NextPage.astro";
+import Tags from "./Tags.astro";
 
 import { getLangFromUrl} from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 import { getCollection } from 'astro:content';
 
-const postsWork = (await getCollection('blog'))
-.filter((each) => each.data.type == "work")
-.filter((each) => each.id.split('/')[0]  === lang)
-.sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
-
-const postsOpinions = (await getCollection('blog'))
-.filter((each) => each.data.type === "opinion")
-.filter((each) => each.id.split('/')[0]  === lang)
+const posts = (await getCollection('blog'))
 .sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
 ---
 
+<Tags />
 <ul class="work">
 	{
-		postsWork.map((post) => (
+		posts.map((post) => (
 			<li>
 				<a href={`/${post.slug}`}>
-					<img src={post.data.heroImage} alt="img" />
+
+					<div class="img-type">
+						<img class="main-img" src={post.data.heroImage} alt="img" />
+						<span class={`type ${post.data.type.toLowerCase()}`}>{post.data.type.toUpperCase()}</span>
+					</div>
 
 					<div class="text">
 						<span class="date">
@@ -43,7 +40,7 @@ const postsOpinions = (await getCollection('blog'))
 						</p>
 						<div class="bottom">
 							<span class="tags">{post.data.tags}</span>
-							<span class="right">O</span>
+							<img class="right" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
 						</div>
 					</div>
 				</a>
@@ -51,8 +48,9 @@ const postsOpinions = (await getCollection('blog'))
 		))
 	}
 </ul>
+<NextPage />
 
-<div class="spacer">
+<!-- <div class="spacer">
 	<ul class="opinion">
 		{
 			postsOpinions.map((post) => (
@@ -79,4 +77,4 @@ const postsOpinions = (await getCollection('blog'))
 		}
 	</ul>
 	<DCard />
-</div>
+</div> -->

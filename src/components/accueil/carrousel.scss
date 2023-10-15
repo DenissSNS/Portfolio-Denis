@@ -1,0 +1,18 @@
+.carrousel {
+  width: 1276px;
+  height: 200px;
+  background-color: var(--background-cards);
+  border-radius: var(--radius);
+
+  padding: 27px 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .presentation {
+  }
+
+  .butt {
+  }
+}

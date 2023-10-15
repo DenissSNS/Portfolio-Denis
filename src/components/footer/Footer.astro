@@ -1,0 +1,19 @@
+---
+import "./footer.scss"
+
+const today = new Date();
+---
+
+<footer>
+	<div class="parts cote">
+		<p>©{today.getFullYear()} <b> · Denis SANS · </b> Tous droits réservés</p>
+	</div>
+	<div class="parts retour">
+		<!-- non visble, prend la meme place que le vrai button -->
+		<p>Retour en haut</p>
+		<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
+	</div>
+	<div class="parts cote">
+	</div>
+</footer>
+

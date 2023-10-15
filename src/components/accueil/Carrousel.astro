@@ -1,0 +1,35 @@
+---
+import "./carrousel.scss"
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="carrousel">
+	
+	<section class="presentation">
+
+		<div>
+			<h1>↗DENIS SANS◦•</h1>
+			<h2>⇄ Étudiant, Designer</h2>
+			<button>VOIR MES ARTICLES <img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
+			</button>
+		</div>
+
+		<div>
+			<!-- <img src="/hero.gif" alt="gif"> -->
+		</div>
+
+		<div>
+			<p><span>34</span>articles</p>
+			<p><span>6</span>ans d'études</p>
+			<p><span>21</span>vidéos</p>
+		</div>
+	</section>
+
+	<section class="butt">
+		
+	</section>
+
+</div>

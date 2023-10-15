@@ -1,0 +1,17 @@
+.d-card {
+  height: 437px;
+  width: 330px;
+  background: linear-gradient(to bottom right, #ff87c6, #6a87bd);
+  padding: 8px;
+  border-radius: 12px;
+
+  position: sticky;
+  top: 45px;
+
+  .in-card {
+    background-color: var(--background-cards);
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+  }
+}

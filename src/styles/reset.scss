@@ -20,7 +20,7 @@ html {
 body {
   min-height: 100%;
 
-  background: var(--background);
+  background: #ffffff url(/bg.jpg) left top/auto repeat fixed;
   color: var(--color);
 
   font-size: var(--fs-text);

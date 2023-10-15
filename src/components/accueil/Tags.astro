@@ -1,0 +1,39 @@
+---
+
+import "./tags.scss"
+
+---
+
+<script>
+
+	const containerTags = document.querySelector('[data-containerTags]');
+	const buttonOpen = document.querySelector('[data-openPanel]');
+
+	buttonOpen?.addEventListener("click", () => containerTags?.classList.toggle("open"));
+
+</script>
+
+<!-- --- -->
+
+<div data-containerTags class="tags-lines">
+
+	<div class="content">
+		<div class="itemtags">Tout</div>
+		<div class="itemtags"><img src="/icons/search.svg" alt="cherche" ></div>
+
+		<div class="divider"></div>
+
+		<div class="itemtags">#photoshop</div>
+		<div class="itemtags">#illustrator</div>
+		<div class="itemtags">#indesign</div>
+		<div class="itemtags">#aftereffects</div>
+		<div class="itemtags">#direction artistique</div>
+		<div class="itemtags">#motiondesign</div>
+		<div class="itemtags">#photographie</div>
+		<div class="itemtags">#autre</div>
+
+		<div class="itemtags">#casclient</div>
+	</div>
+
+	<img data-openPanel src="/icons/main-chevron.svg" alt="more" class="seemore">
+</div>

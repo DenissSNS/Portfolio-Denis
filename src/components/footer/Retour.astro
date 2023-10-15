@@ -1,0 +1,17 @@
+---
+import "./retour.scss"
+---
+
+<script>
+
+	const button = document.querySelector('[data-scroller]');
+  button?.addEventListener("click", () => window.scroll(0, 0));
+
+</script>
+
+<!-- --- -->
+
+<button data-scroller class="vers-haut">
+	<p>Retour en haut</p>
+	<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
+</button>

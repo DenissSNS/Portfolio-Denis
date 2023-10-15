@@ -1,0 +1,46 @@
+.toggleLang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    padding: 35px 0rem; // pour rejoindre le cardre des langues
+
+    .container-langues {
+      display: block;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    position: relative;
+
+    .container-langues {
+      position: absolute;
+      top: 48px;
+      left: -200%;
+      background: var(--background-cards);
+      border: 5px solid var(--background);
+      border-radius: 12px;
+
+      display: none;
+
+      .langues {
+        padding: 18px 45px;
+      }
+
+      &:hover {
+        .container-langues {
+          display: block;
+        }
+      }
+    }
+  }
+
+  img {
+    height: 21px;
+  }
+}

@@ -1,0 +1,77 @@
+.for-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+
+  img {
+    transform: rotate(90deg);
+  }
+}
+
+.liens:not(.visible) {
+  display: none;
+}
+
+.liens.visible {
+  position: absolute;
+  top: 10vh;
+  right: 5vh;
+
+  width: 1260px;
+  height: 550px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
+
+  .liens > div > div {
+    border-radius: 5px;
+    line-height: 80px;
+    transition: ease-in-out 0.1s;
+  }
+  .liens > div > div:not(.col5):hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .col1 > * {
+    width: 315px;
+    height: 86px;
+    margin: 20px;
+  }
+  .col2 > * {
+    width: 387px;
+    height: 510px;
+    margin: 20px 20px 20px 0px;
+  }
+  .col3 > * {
+    width: 160px;
+    height: 157px;
+    margin: 20px 20px 20px 0px;
+  }
+  .col4 > *:not(:last-child) {
+    width: 298px;
+    height: 86px;
+    margin: 20px 20px 20px 0px;
+  }
+  .col5 {
+    display: flex;
+  }
+  .col5 > * {
+    width: 86px;
+    height: 86px;
+    margin: 0px 20px 20px 0px;
+    border-radius: 5px;
+    transition: ease-in-out 0.1s;
+  }
+  .col5 > *:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .lienslink {
+    padding: 30px 115px 30px 115px;
+  }
+}

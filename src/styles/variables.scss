@@ -18,20 +18,25 @@
 
 // global
 :root {
-  --white: #fdb5b5; // fond - à enlever
-  --black: #462a2a; // fond - à enlever
-
   --nav-white: rgba(255, 255, 255, 0.5); // nav
   --cards-white: rgb(255, 255, 255); // cards
+  --button-white-grey: rgb(237, 237, 237); // petits buttons
   --text-black: rgb(0, 0, 0); // text fond blanc
 
   --nav-black: rgba(88, 88, 88, 0.5); // nav
   --cards-black: rgb(88, 88, 88); // cards
+  --button-dark-grey: rgb(239, 111, 111); // petits buttons
   --text-white: rgb(255, 255, 255); // text fond blanc
 
   // ---
 
   --radius: 8px;
+  --shadow: 0 0 30px rgb(0, 0, 0, 0.15);
+  --blur: blur(2.5px);
+
+  --opinion: #a6bfd7;
+  --etude: #a6eed7;
+  --client: #ffb7dd;
 
   // ---
 
@@ -42,7 +47,7 @@
 
   --fs-text: 16px; // texte - description
   --fs-date: 15px;
-  --fs-tags: 17px;
+  --fs-tags: 17px; // tags - button
 
   --fs-h1: 5rem;
   --fs-h2: 3rem;
@@ -52,18 +57,16 @@
 
 // light theme
 :root {
-  --background: var(--white);
   --nav: var(--nav-white);
   --background-cards: var(--cards-white);
-
+  --button: var(--button-white-grey);
   --color: var(--text-black);
 }
 
 // dark theme
 .dark-theme {
-  --background: var(--black);
   --nav: var(--nav-black);
   --background-cards: var(--cards-black);
-
+  --button: var(--button-dark-grey);
   --color: var(--text-white);
 }

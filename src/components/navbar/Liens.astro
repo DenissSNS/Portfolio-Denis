@@ -1,0 +1,75 @@
+---
+import "./liens.scss"
+
+import HeaderLink from './HeaderLink.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<script>
+
+	const liens = document.querySelector('[data-allLiens]');
+	const buttonHeader = document.querySelector('[data-buttonHeader]');
+
+	buttonHeader?.addEventListener("click", () => liens?.classList.toggle("visible"));
+
+</script>
+
+<!-- --- -->
+
+<div data-buttonHeader class="for-arrow">
+	<h4>{t('nav.live')}</h4>
+	<img src="/icons/main-chevron.svg" alt="arrow" width="16px" height="15px" >
+</div>
+
+
+<div data-allLiens class="liens">
+
+	<div class="col1">
+		<div>HOMEPAGE</div>
+		<div>
+			<a href="https://twitter.com/denisssns" target="_blank" class="lienslink">TWITTER/X</a>
+		</div>
+		<div>
+			<a href="https://www.instagram.com/denis_sns" target="_blank" class="lienslink">INSTAGRAM</a>
+		</div>
+		<div>
+			<a href="https://www.youtube.com/channel/UCeD4mrn9m4xignyFdqKa-Rg" target="_blank" class="lienslink">YOUTUBE</a>
+		</div>
+		<div>
+			<a href="https://www.linkedin.com/in/denis-sans-484664203" target="_blank" class="lienslink">LINKEDIN</a>
+		</div>
+	</div>
+
+	<div class="col2">
+		<div>LOREM IPSUM</div>
+	</div>
+
+	<div class="col3">
+		<div>À PROPOS</div>
+		<div>ARCHIVES</div>
+		<div>CHARTE</div>
+	</div>
+
+	<div class="col4">
+		<div>
+			<a href="https://dribbble.com/DenisSNS" target="_blank" class="lienslink">DRIBBBLE</a>
+		</div>
+		<div>BEHANCE</div>
+		<div>
+			<a href="https://www.are.na/denis-s" target="_blank" class="lienslink">ARE.NA</a>
+		</div>
+		<div>
+			<a href="https://cloud.denissans.fr" target="_blank" class="lienslink">CLOUD</a>
+		</div>
+	</div>
+
+	<div class="col5">
+			<div>EMAIL</div>
+			<div>TEL</div>
+			<div>CV</div>
+	</div>
+
+</div>

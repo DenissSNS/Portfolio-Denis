@@ -10,11 +10,35 @@ ul.work {
     height: 542px;
     background-color: var(--background-cards);
     border-radius: var(--radius);
+    box-shadow: var(--shadow);
 
-    img {
-      width: 400px;
-      height: 280px;
-      border-radius: var(--radius);
+    .img-type {
+      position: relative;
+
+      img.main-img {
+        width: 400px;
+        height: 280px;
+        border-radius: var(--radius);
+      }
+
+      .type {
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        border-top-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+        padding: 8px 15px;
+
+        &.client {
+          background-color: var(--client);
+        }
+        &.opinion {
+          background-color: var(--opinion);
+        }
+        &.étude {
+          background-color: var(--etude);
+        }
+      }
     }
 
     .text {

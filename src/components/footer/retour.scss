@@ -1,0 +1,27 @@
+.vers-haut {
+  position: sticky;
+  top: calc(100vh - 50px);
+
+  height: 50px;
+  padding: 0 30px;
+
+  background: var(--nav);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+
+  font-family: var(--font-title-medium);
+
+  z-index: 10;
+
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+
+  img {
+    transform: rotate(-90deg);
+  }
+}
