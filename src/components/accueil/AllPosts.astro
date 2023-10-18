@@ -10,13 +10,20 @@ import { getLangFromUrl} from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 import { getCollection } from 'astro:content';
+import LastPost from "./LastPost.astro";
+import LastVideo from "./LastVideo.astro";
 
 const posts = (await getCollection('blog'))
 .sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
 ---
+
+<div class="newPosts">
+	<LastPost />
+	<LastVideo />
+</div>
 
 <Tags />
 <ul class="work">
@@ -50,31 +57,3 @@ const posts = (await getCollection('blog'))
 </ul>
 <NextPage />
 
-<!-- <div class="spacer">
-	<ul class="opinion">
-		{
-			postsOpinions.map((post) => (
-				<li>
-					<a href={`/${post.slug}`}>
-						<img src={post.data.heroImage} alt="img" />
-
-						<div class="text">
-							<span class="date">
-								· <FormattedDate date={post.data.pubDate} />
-							</span>
-							<h3 class="title">{post.data.title}</h3>
-							<p class="desc">
-								{post.body}
-							</p>
-							<div class="bottom">
-								<span class="tags">{post.data.tags}</span>
-								<span class="right">O</span>
-							</div>
-						</div>
-					</a>
-				</li>
-			))
-		}
-	</ul>
-	<DCard />
-</div> -->

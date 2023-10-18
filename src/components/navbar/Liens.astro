@@ -9,25 +9,44 @@ const t = useTranslations(lang);
 
 <script>
 
-	const liens = document.querySelector('[data-allLiens]');
+	const liens = document.querySelectorAll('[data-allLiens]');
 	const buttonHeader = document.querySelector('[data-buttonHeader]');
 
-	buttonHeader?.addEventListener("click", () => liens?.classList.toggle("visible"));
+	buttonHeader?.addEventListener("click", () =>
+		liens.forEach(eachLien => {
+			eachLien.classList.toggle("visible");
+		})
+	);
+
+// ---
+
+	var box1 = document.querySelector('.box1');
+	var box2 = document.querySelector('.box2');
+
+	document.addEventListener('click', (event) => {
+    if (event.target !== box1 && event.target !== box2){
+			liens.forEach(eachLien => {
+				eachLien.classList.remove("visible");
+			})
+		}
+  });
 
 </script>
 
 <!-- --- -->
 
-<div data-buttonHeader class="for-arrow">
-	<h4>{t('nav.live')}</h4>
-	<img src="/icons/main-chevron.svg" alt="arrow" width="16px" height="15px" >
+<div data-buttonHeader class="for-arrow" >
+	<h4 class="box1">{t('nav.live')}</h4>
+	<img src="/icons/main-chevron.svg" alt="arrow" width="16px" height="15px" class="box2">
 </div>
 
 
-<div data-allLiens class="liens">
+<div data-allLiens class="liens" class="box3">
 
 	<div class="col1">
-		<div class="block">HOMEPAGE</div>
+		<div class="block">
+			<a data-allLiens href="" class="lienslink">HOMEPAGE</a>
+		</div>
 		<div class="block">
 			<a href="https://twitter.com/denisssns" target="_blank" class="lienslink">TWITTER/X</a>
 		</div>
@@ -47,16 +66,24 @@ const t = useTranslations(lang);
 	</div>
 
 	<div class="col3">
-		<div class="block">À PROPOS</div>
-		<div class="block">ARCHIVES</div>
-		<div class="block">CHARTE</div>
+		<div class="block">
+			<a href="#" class="lienslink">À PROPOS</a>
+		</div>
+		<div class="block">
+			<a href="#" class="lienslink">ARCHIVES</a>
+		</div>
+		<div class="block">
+			<a href="#" class="lienslink">CHARTE</a>
+		</div>
 	</div>
 
 	<div class="col4">
 		<div class="block">
 			<a href="https://dribbble.com/DenisSNS" target="_blank" class="lienslink">DRIBBBLE</a>
 		</div>
-		<div class="block">BEHANCE</div>
+		<div class="block">
+			<a href="#" target="_blank" class="lienslink">BEHANCE</a>
+		</div>
 		<div class="block">
 			<a href="https://www.are.na/denis-s" target="_blank" class="lienslink">ARE.NA</a>
 		</div>
@@ -65,9 +92,15 @@ const t = useTranslations(lang);
 		</div>
 
 		<div class="col5">
-			<div class="block">EMAIL</div>
-			<div class="block">TEL</div>
-			<div class="block">CV</div>
+			<div class="block">
+				<a href="mailto:denissans@outlook.fr">EMAIL</a>
+			</div>
+			<div class="block">
+				<a href="tel:+33695049490">TEL</a>
+			</div>
+			<div class="block">
+				<a href="#">CV</a>
+			</div>
 		</div>
 	</div>
 

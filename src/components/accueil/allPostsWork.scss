@@ -1,3 +1,11 @@
+.newPosts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 ul.work {
   display: flex;
   justify-content: center;
@@ -27,7 +35,9 @@ ul.work {
         right: 0;
         border-top-left-radius: var(--radius);
         border-bottom-right-radius: var(--radius);
-        padding: 8px 15px;
+        font-family: var(--font-title-medium);
+        font-size: var(--fs-typePost);
+        padding: 7px 15px;
 
         &.client {
           background-color: var(--client);

@@ -5,11 +5,14 @@ import Header from '../../components/navbar/Header.astro';
 import Footer from '../../components/footer/Footer.astro';
 import Retour from "../../components/footer/Retour.astro";
 
+
 import AllPosts from '../../components/accueil/AllPosts.astro';
 import HireMe from '../../components/accueil/Carrousel.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getLangFromUrl } from '../../i18n/utils';
+import LastPost from "../../components/accueil/LastPost.astro";
+import LastVideo from "../../components/accueil/LastVideo.astro";
 
 const lang = getLangFromUrl(Astro.url);
 ---

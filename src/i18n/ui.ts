@@ -14,6 +14,8 @@ export const ui = {
     "hireMe.title": "JE VEND MON CUL",
     "hireMe.accroche":
       "Je suis à la recherche du prochain poste idéal pour étendre mes horizons artistiques",
+
+    "video.title": "REGADER MA DERNIÈRE VIDÉO",
   },
   en: {
     "nav.contact": "ABOUT",
@@ -21,5 +23,7 @@ export const ui = {
 
     "hireMe.title": "I SELL MY BUTT",
     "hireMe.accroche": "Yes please continue",
+
+    "video.title": "WATCH MY LAST VIDEO",
   },
 } as const;
