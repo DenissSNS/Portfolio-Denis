@@ -1,0 +1,33 @@
+.lastVideo {
+  width: 400px;
+  height: 540px;
+  padding: 15px;
+
+  background-color: var(--background-cards);
+  border-radius: var(--radius);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: var(--font-title-bold);
+  }
+
+  .container-video {
+  }
+
+  .bottom {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

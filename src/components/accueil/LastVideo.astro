@@ -1,5 +1,5 @@
 ---
-import "./lastPost.scss"
+import "./lastVideo.scss"
 
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
@@ -7,6 +7,18 @@ const t = useTranslations(lang);
 
 ---	
 
-<div>
-	<h3>{t('video.title')}</h3>
+<div class="lastVideo">
+	<div class="titre">
+		<h3>{t('video.title1')}</h3>
+		<h3>{t('video.title2')}</h3>	
+	</div>
+
+	<div class="container-video">
+
+	</div>
+
+	<div class="bottom">
+		<img class="right" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
+	</div>
+
 </div>

@@ -15,7 +15,8 @@ export const ui = {
     "hireMe.accroche":
       "Je suis à la recherche du prochain poste idéal pour étendre mes horizons artistiques",
 
-    "video.title": "REGADER MA DERNIÈRE VIDÉO",
+    "video.title1": "REGADER MA",
+    "video.title2": "DERNIÈRE VIDÉO :",
   },
   en: {
     "nav.contact": "ABOUT",
@@ -24,6 +25,7 @@ export const ui = {
     "hireMe.title": "I SELL MY BUTT",
     "hireMe.accroche": "Yes please continue",
 
-    "video.title": "WATCH MY LAST VIDEO",
+    "video.title": "WATCH MY",
+    "video.title2": "LAST VIDEO :",
   },
 } as const;
