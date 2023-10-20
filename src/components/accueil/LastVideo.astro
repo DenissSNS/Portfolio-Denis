@@ -5,6 +5,12 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// api: AIzaSyCl7q3lbuvDV1hKdpAVuUTkkWUv1zYlBBc
+// https://developers.google.com/youtube/v3/getting-started?hl=fr
+
+// URL: https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=YOUR_API_KEY
+//      &part=snippet,contentDetails,statistics
+
 ---	
 
 <div class="lastVideo">
@@ -14,7 +20,7 @@ const t = useTranslations(lang);
 	</div>
 
 	<div class="container-video">
-
+		<iframe src="https://www.youtube.com/embed/jx1CSEI-ato" title="video" allowfullscreen></iframe>
 	</div>
 
 	<div class="bottom">

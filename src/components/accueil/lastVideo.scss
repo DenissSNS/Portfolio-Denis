@@ -15,12 +15,18 @@
   .titre {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    width: 100%;
+    text-align: left;
     font-family: var(--font-title-bold);
   }
 
   .container-video {
+    iframe {
+      width: 370px;
+      height: 208px;
+      border: none;
+      border-radius: var(--radius);
+    }
   }
 
   .bottom {
