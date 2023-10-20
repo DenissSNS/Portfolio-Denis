@@ -1,6 +1,6 @@
 .carrousel {
   width: 1276px;
-  height: 200px;
+  height: 540px;
   background-color: var(--background-cards);
   border-radius: var(--radius);
 
@@ -11,8 +11,49 @@
   gap: 10px;
 
   .presentation {
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 
-  .butt {
+    .colonne1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .article {
+        background: linear-gradient(120deg, #ffb7dd, #a6bfd7, #a6eed7);
+        border-radius: 500px;
+        font-size: var(--fs-tags);
+        font-family: var(--font-title-bold);
+        padding: 15px;
+
+        img {
+          transform: rotate(90deg);
+        }
+      }
+
+      .fleche {
+        transform: rotate(34deg);
+        width: 183.64px;
+        height: 54.11px;
+      }
+    }
+
+    .colonne2 {
+      .fleche {
+        transform: rotate(-12deg);
+        width: 171.73px;
+        height: 97.83px;
+      }
+    }
+
+    .colonne3 {
+      .fleche {
+        transform: rotate(-4deg);
+        width: 75.7px;
+        height: 192.88px;
+      }
+    }
   }
 }
