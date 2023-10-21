@@ -22,11 +22,13 @@
   --cards-white: rgb(255, 255, 255); // cards
   --button-white-grey: rgb(237, 237, 237); // petits buttons
   --text-black: rgb(0, 0, 0); // text fond blanc
+  --text-grey-white: rgb(138, 138, 138); // text grey carrousel
 
   --nav-black: rgba(88, 88, 88, 0.5); // nav
   --cards-black: rgb(88, 88, 88); // cards
   --button-dark-grey: rgb(239, 111, 111); // petits buttons
   --text-white: rgb(255, 255, 255); // text fond blanc
+  --text-grey-black: rgb(138, 138, 138); // text grey carrousel
 
   // ---
 
@@ -45,13 +47,13 @@
   --font-title-medium: "RoundMedium", serif;
   --font-text: "Rubik", sans-serif;
 
-  --fs-typePost: 12px;
-  --fs-date: 15px;
+  --fs-typePost: 12px; // type de post
+  --fs-date: 15px; // sous text - date
   --fs-text: 16px; // texte - description
   --fs-tags: 17px; // tags - button
 
-  --fs-h1: 5rem;
-  --fs-h2: 3rem;
+  --fs-h1: 5.5rem; // nom
+  --fs-h2: 2.25rem; // fonction
   --fs-h3: 24px; // titres cartes
   --fs-h4: 20px; // navbar
 }
@@ -62,6 +64,7 @@
   --background-cards: var(--cards-white);
   --button: var(--button-white-grey);
   --color: var(--text-black);
+  --text-grey: var(--text-grey-white);
 }
 
 // dark theme
@@ -70,4 +73,5 @@
   --background-cards: var(--cards-black);
   --button: var(--button-dark-grey);
   --color: var(--text-white);
+  --text-grey: var(--text-grey-black);
 }

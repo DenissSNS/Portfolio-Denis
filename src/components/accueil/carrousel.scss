@@ -1,8 +1,6 @@
 .carrousel {
   width: 1276px;
   height: 540px;
-  background-color: var(--background-cards);
-  border-radius: var(--radius);
 
   padding: 27px 22px;
 
@@ -12,14 +10,39 @@
 
   .presentation {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      background-image: url("/gradient/behind-hero.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 1920px 683px;
+      z-index: -1;
+    }
 
     .colonne1 {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+
+      .nom {
+        h1 {
+          margin: -30px 0;
+        }
+
+        h2 {
+          margin-top: 20px;
+        }
+      }
 
       .article {
         background: linear-gradient(120deg, #ffb7dd, #a6bfd7, #a6eed7);
@@ -37,10 +60,49 @@
         transform: rotate(34deg);
         width: 183.64px;
         height: 54.11px;
+
+        align-self: flex-end;
       }
     }
 
     .colonne2 {
+      &::before {
+        content: " ";
+        position: absolute;
+        top: -120px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background-image: url("/gradient/blur-splash.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 665px 665px;
+        z-index: -1;
+        transform: rotate(77deg);
+      }
+
+      .logo {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        width: 264px;
+        height: 264px;
+
+        img {
+          width: 348px;
+          height: 348px;
+
+          transform: rotate(0deg);
+          transition: transform 1s ease-in-out;
+
+          display: block;
+
+          &.animated {
+            display: none;
+          }
+        }
+      }
+
       .fleche {
         transform: rotate(-12deg);
         width: 171.73px;
@@ -49,7 +111,56 @@
     }
 
     .colonne3 {
+      position: relative;
+
+      .what {
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+        text-align: right;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0px;
+          top: 0;
+          width: 10px;
+          height: 200%;
+          box-shadow: 35px 0px 0px 0px rgb(226, 226, 226);
+          border-radius: var(--radius);
+          z-index: -1;
+        }
+
+        p {
+          color: var(--text-grey);
+          font-size: 22px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          span {
+            color: var(--color);
+            font-family: var(--font-title-bold);
+            font-size: 37px;
+            margin: 10px 0;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 15px;
+            width: 10px;
+            height: 10px;
+            box-shadow: 35px 0px 0px 5px rgb(226, 226, 226);
+            border-radius: 50%;
+          }
+        }
+      }
       .fleche {
+        position: absolute;
+        top: 55px;
+        right: -70px;
         transform: rotate(-4deg);
         width: 75.7px;
         height: 192.88px;

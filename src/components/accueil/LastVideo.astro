@@ -5,20 +5,12 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// api: AIzaSyCl7q3lbuvDV1hKdpAVuUTkkWUv1zYlBBc
-// https://developers.google.com/youtube/v3/getting-started?hl=fr
-
-// URL: https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyCl7q3lbuvDV1hKdpAVuUTkkWUv1zYlBBc
-//      &part=snippet,contentDetails,statistics
-
-// https://docs.astro.build/en/guides/data-fetching/
-
-
-// const response = await fetch('https://www.googleapis.com/youtube/v3/videos?id=jx1CSEI-ato&key=AIzaSyCl7q3lbuvDV1hKdpAVuUTkkWUv1zYlBBc&part=snippet,statistics');
-// const data = await response.json();
-// console.log(data.items[0].snippet.thumbnails.high.url)
+const response = await fetch('https://www.googleapis.com/youtube/v3/videos?id=jx1CSEI-ato&key=AIzaSyCl7q3lbuvDV1hKdpAVuUTkkWUv1zYlBBc&part=snippet,statistics');
+const data = await response.json();
 
 ---	
+		<!-- <p>channel id: {data.items[0].snippet.channelId}</p> -->
+		<!-- <p>channel title: {data.items[0].snippet.channelTitle}</p> -->
 
 <div class="lastVideo">
 	<div class="titre">
@@ -26,16 +18,18 @@ const t = useTranslations(lang);
 		<h3>{t('video.title2')}</h3>	
 	</div>
 
-	<!-- <div class="container-video">
+	<div class="container-video">
 		<iframe src=`https://www.youtube.com/embed/${data.items[0].id}` title="video" allowfullscreen></iframe>
-		<p>nb views : {data.items[0].statistics.viewCount}</p>
-		<p>channel id: {data.items[0].snippet.channelId}</p>
-		<p>channel title: {data.items[0].snippet.channelTitle}</p>
-		<p>titre : {data.items[0].snippet.title}</p>
-		<p>description : {data.items[0].snippet.description}</p>
-		<p>date : {data.items[0].snippet.publishedAt}</p>
-		<img src={data.items[0].snippet.thumbnails.high.url} alt="thumbnail">
-	</div> -->
+		<div class="info">
+			<img src="/logo.png" alt="main-logo">
+			<div>
+				<h4>{data.items[0].snippet.title}</h4>
+				<p>{data.items[0].statistics.viewCount} vues · {data.items[0].snippet.publishedAt}</p>
+			</div>
+		</div>
+
+		<p class="descri">{data.items[0].snippet.description}</p>
+	</div>
 
 	<div class="bottom">
 		<img class="right" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />

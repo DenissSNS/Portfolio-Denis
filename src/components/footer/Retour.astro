@@ -7,11 +7,23 @@ import "./retour.scss"
 	const button = document.querySelector('[data-scroller]');
   button?.addEventListener("click", () => window.scroll(0, 0));
 
+	window.addEventListener('scroll', function() {
+			var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+			// tkt
+			if (scrollPosition >= 300) {
+					button.style.display = 'flex';
+			} else {
+					button.style.display = 'none';
+			}
+	});
+
+
 </script>
 
 <!-- --- -->
 
-<button data-scroller class="vers-haut">
+<button data-scroller class="vers-haut" id="ele" style="display:none">
 	<p>Retour en haut</p>
 	<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
 </button>

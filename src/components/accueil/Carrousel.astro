@@ -6,13 +6,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
+
+
 <div class="carrousel">
 	
 	<section class="presentation">
 
 		<div class="colonne1">
-			<h1>↗DENIS<br>SANS◦•</h1>
-			<h2>⇄ Étudiant, Designer</h2>
+			<div class="nom">
+				<h1>↗DENIS</h1>
+				<h1>SANS◦•</h1>
+				<h2>⇄ Étudiant, Designer</h2>
+			</div>
 			<a href="#go-tags" class="article">
 				VOIR MES ARTICLES <img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
 			</a>
@@ -20,14 +25,19 @@ const t = useTranslations(lang);
 		</div>
 
 		<div class="colonne2">
-			<!-- <img src="/hero.gif" alt="gif"> -->
+			<div class="logo">
+				<!-- <img src="/hero.gif" alt="gif" class="static"> -->
+				<!-- <img class="static" src="https://lh4.googleusercontent.com/-gZiu96oTuu4/Uag5oWLQHfI/AAAAAAAABSE/pl1W8n91hH0/w140-h165-no/Homer-Static.png"><img class="active" src="https://lh4.googleusercontent.com/i1RprwcvxhbN2TAMunNxS4RiNVT0DvlD9FNQCvPFuJ0=w140-h165-no"> -->
+			</div>
 			<img src="/fleche/arrow2.svg" alt="img-arrow2" class="fleche">
 		</div>
 
 		<div class="colonne3">
-			<p><span>34</span>articles</p>
-			<p><span>6</span>ans d'études</p>
-			<p><span>21</span>vidéos</p>
+			<div class="what">
+				<p><span>34</span>Articles</p>
+				<p><span>6</span>Ans d'études</p>
+				<p><span>21</span>Vidéos</p>
+			</div>
 			<img src="/fleche/arrow3.svg" alt="img-arrow23" class="fleche">
 		</div>
 

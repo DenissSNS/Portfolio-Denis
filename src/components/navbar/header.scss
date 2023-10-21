@@ -16,7 +16,7 @@ header {
 
     .parts {
       height: 50px;
-      padding: 0 45px;
+      padding: 0 40px;
 
       background: var(--nav);
       border-bottom-left-radius: var(--radius);
@@ -25,7 +25,7 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 45px;
+      gap: 40px;
 
       box-shadow: var(--shadow);
       backdrop-filter: var(--blur);
