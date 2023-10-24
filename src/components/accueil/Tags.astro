@@ -2,6 +2,37 @@
 
 import "./tags.scss"
 
+import { getCollection } from 'astro:content';
+const allTags = (await getCollection('blog'))
+.map((eachPost) => (
+		eachPost.data.tags
+	)
+);
+
+
+function filtrerHashtagsUniques(tableau) {
+  const hashtagsUniques = new Set();
+
+  // Parcours du tableau original
+  tableau.forEach(element => {
+    // Séparation de la chaîne en hashtags
+    const hashtags = element.split(', ');
+
+    // Ajout de chaque hashtag unique à l'ensemble
+    hashtags.forEach(hashtag => {
+      hashtagsUniques.add(hashtag);
+    });
+  });
+
+  // Conversion de l'ensemble en tableau
+  const tableauHashtagsUniques = [...hashtagsUniques];
+
+  return tableauHashtagsUniques;
+}
+
+const hashtagsUniques = filtrerHashtagsUniques(allTags);
+
+
 ---
 
 <script>
@@ -23,16 +54,12 @@ import "./tags.scss"
 
 		<div class="divider"></div>
 
-		<div class="itemtags">#photoshop</div>
-		<div class="itemtags">#illustrator</div>
-		<div class="itemtags">#indesign</div>
-		<div class="itemtags">#aftereffects</div>
-		<div class="itemtags">#direction artistique</div>
-		<div class="itemtags">#motiondesign</div>
-		<div class="itemtags">#photographie</div>
-		<div class="itemtags">#autre</div>
+		{
+			hashtagsUniques.map((eachTag) => (
+				<div class="itemtags">{eachTag}</div>
+			))
+		}
 
-		<div class="itemtags">#casclient</div>
 	</div>
 
 	<img data-openPanel src="/icons/main-chevron.svg" alt="more" class="seemore">

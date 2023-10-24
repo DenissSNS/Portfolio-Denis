@@ -3,7 +3,7 @@ heroImage: "/placeholder.jpg"
 pubDate: "Oct 18 2023"
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
-tags: "#oui, #non, #aaaah"
+tags: "#oui, #non, #mais encore"
 type: "opinion"
 ---
 

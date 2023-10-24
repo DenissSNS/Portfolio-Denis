@@ -3,11 +3,10 @@ import "./allPostsWork.scss"
 
 import FormattedDate from '../FormattedDate.astro';
 import Tags from "./Tags.astro";
-
-import { getCollection } from 'astro:content';
 import LastPost from "./LastPost.astro";
 import LastVideo from "./LastVideo.astro";
 
+import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog'))
 .sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()

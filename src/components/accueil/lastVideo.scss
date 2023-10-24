@@ -5,6 +5,7 @@
 
   background-color: var(--background-cards);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 
   display: flex;
   flex-direction: column;
@@ -27,7 +28,7 @@
     align-items: flex-start;
     gap: 15px;
 
-    iframe {
+    .thumbnail {
       width: 370px;
       height: 208px;
       border: none;
@@ -41,10 +42,12 @@
       gap: 15px;
       font-size: var(--fs-date);
 
+      a,
       img {
         height: 44px;
         width: 44px;
         border-radius: 50%;
+        z-index: 5;
       }
 
       h4 {
