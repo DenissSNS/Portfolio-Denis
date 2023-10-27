@@ -1,5 +1,10 @@
 ---
 import "./retour.scss"
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
 <script>
@@ -24,6 +29,6 @@ import "./retour.scss"
 <!-- --- -->
 
 <button data-scroller class="vers-haut" id="ele" style="display:none">
-	<p>Retour en haut</p>
+	<p>{t('footer.retour')}</p>
 	<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
 </button>

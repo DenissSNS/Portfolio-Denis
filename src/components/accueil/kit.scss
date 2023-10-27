@@ -1,0 +1,23 @@
+.kit-container {
+  background-color: var(--background-cards);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 6px;
+  font-family: var(--font-title-medium);
+
+  align-self: flex-start;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  a {
+    padding: 6px;
+    background-color: var(--button);
+    border-radius: var(--radius);
+    text-align: left;
+    width: 100%;
+  }
+}

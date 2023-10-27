@@ -3,8 +3,9 @@ import "./lastPost.scss"
 
 import FormattedDate from '../FormattedDate.astro';
 
-import { getLangFromUrl} from '../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 import { getCollection } from 'astro:content';
 
@@ -22,7 +23,7 @@ const lastPost = posts[0]
 
 		<div class="img-type">
 			<img src={lastPost.data.heroImage} alt="img" class="main-img"/>
-			<span class="newPost">🔥DERNIER ARTICLE</span>
+			<span class="newPost">🔥{t('lastPost.last')}</span>
 			<span class={`type ${lastPost.data.type.toLowerCase()}`}>{lastPost.data.type.toUpperCase()}</span>
 		</div>
 

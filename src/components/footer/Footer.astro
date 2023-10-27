@@ -1,16 +1,20 @@
 ---
 import "./footer.scss"
 
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const today = new Date();
 ---
 
 <footer>
 	<div class="parts cote">
-		<p>©{today.getFullYear()} <b> · Denis SANS · </b> Tous droits réservés</p>
+		<p>©{today.getFullYear()} <b> · Denis SANS · </b> {t('footer.droits')}</p>
 	</div>
 	<div class="parts retour">
 		<!-- non visble, prend la meme place que le vrai button -->
-		<p>Retour en haut</p>
+		<p>{t('footer.retour')}</p>
 		<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
 	</div>
 	<div class="parts cote">

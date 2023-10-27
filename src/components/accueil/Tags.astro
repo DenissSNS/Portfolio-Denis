@@ -2,6 +2,10 @@
 
 import "./tags.scss"
 
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 import { getCollection } from 'astro:content';
 const allTags = (await getCollection('blog'))
 .map((eachPost) => (
@@ -49,7 +53,7 @@ const hashtagsUniques = filtrerHashtagsUniques(allTags);
 <div data-containerTags class="tags-lines" id="go-tags">
 
 	<div class="content">
-		<div class="itemtags">Tout</div>
+		<div class="itemtags">{t('tags.all')}</div>
 		<div class="itemtags"><img src="/icons/search.svg" alt="cherche" ></div>
 
 		<div class="divider"></div>

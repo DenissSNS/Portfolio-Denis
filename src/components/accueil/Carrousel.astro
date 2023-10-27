@@ -16,10 +16,11 @@ const t = useTranslations(lang);
 			<div class="nom">
 				<h1>↗DENIS</h1>
 				<h1>SANS◦•</h1>
-				<h2>⇄ Étudiant, Designer</h2>
+				<h2>⇄ {t('carrousel.metier')}</h2>
 			</div>
 			<a href="#go-tags" class="article">
-				VOIR MES ARTICLES <img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
+				{t('carrousel.voir')} 
+				<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" >
 			</a>
 			<img src="/fleche/arrow1.svg" alt="img-arrow1" class="fleche">
 		</div>
@@ -34,9 +35,9 @@ const t = useTranslations(lang);
 
 		<div class="colonne3">
 			<div class="what">
-				<p><span>34</span>Articles</p>
-				<p><span>6</span>Ans d'études</p>
-				<p><span>21</span>Vidéos</p>
+				<p><span>34</span>{t('carrousel.articles')} </p>
+				<p><span>6</span>{t('carrousel.etudes')} </p>
+				<p><span>21</span>{t('carrousel.videos')} </p>
 			</div>
 			<img src="/fleche/arrow3.svg" alt="img-arrow23" class="fleche">
 		</div>

@@ -28,7 +28,7 @@ const data = await response.json();
 			</a>
 			<div>
 				<h4>{data.items[0].snippet.title}</h4>
-				<p>{data.items[0].statistics.viewCount} vues · {data.items[0].snippet.publishedAt}</p>
+				<p>{data.items[0].statistics.viewCount} {t('video.view')} · {data.items[0].snippet.publishedAt}</p>
 			</div>
 		</div>
 
