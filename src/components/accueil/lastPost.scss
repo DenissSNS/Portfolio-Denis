@@ -1,4 +1,6 @@
 a.lastPost {
+  position: relative;
+
   width: 830px;
   height: 540px;
   padding: 15px;
@@ -6,6 +8,7 @@ a.lastPost {
   background-color: var(--background-cards);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
 
   display: flex;
   justify-content: center;
@@ -45,6 +48,7 @@ a.lastPost {
       font-family: var(--font-title-medium);
       font-size: var(--fs-typePost);
       padding: 7px 15px;
+      color: var(--text-black);
 
       &.client {
         background-color: var(--client);
@@ -79,7 +83,7 @@ a.lastPost {
     .desc {
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 19; // Xème ligne
+      -webkit-line-clamp: 18; // Xème ligne
       -webkit-box-orient: vertical;
       position: relative;
 
@@ -88,12 +92,8 @@ a.lastPost {
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 50px;
-        background: linear-gradient(
-          to top,
-          var(--background-cards),
-          transparent
-        );
+        height: 150px;
+        background: linear-gradient(to top, var(--desc-blur), transparent);
         z-index: 2;
         pointer-events: none;
       }

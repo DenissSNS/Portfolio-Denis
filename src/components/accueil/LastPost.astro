@@ -18,27 +18,27 @@ const lastPost = posts[0]
 
 ---	
 	
-	<a href={`/${lastPost.slug}`} class="lastPost">
-		
+<a href={`/${lastPost.slug}`} class="lastPost">
+	
 
-		<div class="img-type">
-			<img src={lastPost.data.heroImage} alt="img" class="main-img"/>
-			<span class="newPost">🔥{t('lastPost.last')}</span>
-			<span class={`type ${lastPost.data.type.toLowerCase()}`}>{lastPost.data.type.toUpperCase()}</span>
-		</div>
+	<div class="img-type">
+		<img src={lastPost.data.heroImage} alt="img" class="main-img"/>
+		<span class="newPost">🔥{t('lastPost.last')}</span>
+		<span class={`type ${lastPost.data.type.toLowerCase()}`}>{lastPost.data.type.toUpperCase()}</span>
+	</div>
 
-		<div class="text">
-			<span class="date">
-				· <FormattedDate date={lastPost.data.pubDate} />
-			</span>
-			<h3 class="title">{lastPost.data.title}</h3>
-			<p class="desc">
-				{lastPost.body}
-			</p>
-			<div class="bottom">
-				<span class="tags">{lastPost.data.tags}</span>
-				<img class="right" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
-			</div>
+	<div class="text">
+		<span class="date">
+			· <FormattedDate date={lastPost.data.pubDate} />
+		</span>
+		<h3 class="title">{lastPost.data.title}</h3>
+		<p class="desc">
+			{lastPost.body}
+		</p>
+		<div class="bottom">
+			<span class="tags">{lastPost.data.tags}</span>
+			<img class="right svg-a-colorier" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
 		</div>
-	</a>
+	</div>
+</a>
 

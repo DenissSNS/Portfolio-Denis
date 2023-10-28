@@ -1,4 +1,6 @@
 .lastVideo {
+  position: relative;
+
   width: 400px;
   height: 540px;
   padding: 15px;
@@ -6,6 +8,7 @@
   background-color: var(--background-cards);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
 
   display: flex;
   flex-direction: column;
@@ -80,7 +83,7 @@
     .descri {
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 7; // Xème ligne
+      -webkit-line-clamp: 6; // Xème ligne
       -webkit-box-orient: vertical;
       position: relative;
 
@@ -89,12 +92,8 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 50px;
-        background: linear-gradient(
-          to top,
-          var(--background-cards),
-          transparent
-        );
+        height: 70px;
+        background: linear-gradient(to top, var(--desc-blur), transparent);
         z-index: 2;
         pointer-events: none;
       }

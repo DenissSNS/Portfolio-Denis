@@ -1,7 +1,11 @@
 .kit-container {
+  position: relative;
+
   background-color: var(--background-cards);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+
   padding: 6px;
   font-family: var(--font-title-medium);
 

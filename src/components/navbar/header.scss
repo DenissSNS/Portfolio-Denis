@@ -18,7 +18,7 @@ header {
       height: 50px;
       padding: 0 40px;
 
-      background: var(--nav);
+      background: var(--background-cards);
       border-bottom-left-radius: var(--radius);
       border-bottom-right-radius: var(--radius);
 
@@ -37,10 +37,16 @@ header {
         justify-content: flex-start;
         align-items: center;
 
-        img {
-          height: 44px;
-          width: 44px;
-          border-radius: 50%;
+        a {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          img {
+            height: 44px;
+            width: 44px;
+            border-radius: 50%;
+          }
         }
       }
 

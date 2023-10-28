@@ -10,7 +10,7 @@ const data = await response.json();
 
 ---	
 
-<div  class="lastVideo">
+<a href=`https://www.youtube.com/watch/${data.items[0].id}` target="_blank" rel="noopener noreferrer" class="lastVideo">
 
 	<div class="titre">
 		<h3>{t('video.title1')}</h3>
@@ -18,14 +18,10 @@ const data = await response.json();
 	</div>
 
 	<div class="container-video">
-		<a href=`https://www.youtube.com/watch/${data.items[0].id}` target="_blank" rel="noopener noreferrer">
 			<img src={data.items[0].snippet.thumbnails.high.url} alt="thumbnail" class="thumbnail">
-		</a>
 
 		<div class="info">
-			<a href=`https://www.youtube.com/@denisSNS` target="_blank">
 				<img src="/logo.png" alt="main-logo">
-			</a>
 			<div>
 				<h4>{data.items[0].snippet.title}</h4>
 				<p>{data.items[0].statistics.viewCount} {t('video.view')} · {data.items[0].snippet.publishedAt}</p>
@@ -36,9 +32,7 @@ const data = await response.json();
 	</div>
 
 	<div class="bottom">
-		<a href=`https://www.youtube.com/watch/${data.items[0].id}` target="_blank" rel="noopener noreferrer">
-			<img class="right" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
-		</a>
+			<img class="right svg-a-colorier" src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" />
 	</div>
 
-</div>
+</a>
