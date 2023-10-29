@@ -4,6 +4,7 @@ import "./settings.scss"
 
 import ToggleDarkLight from './ToggleDarkLight.astro';
 import ToggleLanguage from './ToggleLanguage.astro';
+import ToggleSide from './ToggleSide.astro';
 
 ---
 
@@ -12,9 +13,13 @@ import ToggleLanguage from './ToggleLanguage.astro';
 
 	<div class="toggleSettings">
 
+		<h3>· Thème :</h3>
 		<ToggleDarkLight />
+
+		<h3>· Paramètres du site :</h3>
 		<ToggleLanguage />
-		
+		<ToggleSide />
+
 	</div>
 </div>
 

@@ -1,66 +1,25 @@
 ---
+const { posts, page } = Astro.props;
+
 import "./allPostsWork.scss"
 
 import FormattedDate from '../FormattedDate.astro';
-import Tags from "./Tags.astro";
-import LastPost from "./LastPost.astro";
-import LastVideo from "./LastVideo.astro";
 
-import { getCollection } from 'astro:content';
-const posts = (await getCollection('blog'))
-.sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+import { getLangFromUrl } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 
 let nbPages: number[] = [];
 var a = 1
-for (let i = 0; i < posts.length; i+=6) {
+for (let i = 0; i < page.lastPage; i++) {
 	nbPages.push(a)
 	a += 1
 }
 
-let myDebut = 0
-let myFin = 6
-
 ---
-
-<script>
-	// mettre les num de slice en variable et changer quand on clique sur les button 
-	// début : 6* n-1
-	// fin : début + 6
-
-	// Suppose que buttons est un tableau d'éléments boutons
-	const buttonsChange = document.querySelectorAll('[data-buttonChange]');
-
-	buttonsChange.forEach((eachButtonChange, index) => {
-			eachButtonChange.addEventListener('click', () => {
-					// Utilisez la formule précédente pour calculer la plage en fonction de l'index
-					const debut = 6 * (index) ;
-					const fin = debut + 6; 
-
-					// Faites quelque chose avec la plage calculée
-					console.log(`Bouton ${index + 1} cliqué. Plage d'indices : ${debut} à ${fin}`);
-					
-					// Ajoutez ici le code pour manipuler la plage d'indices dans votre tableau
-
-					
-			});
-	});
-
-</script>
-
-
-<div class="newPosts">
-	<LastPost />
-	<LastVideo />
-</div>
-
-<Tags />
 
 <ul class="work">
 	{
-		posts
-		.slice(myDebut, myFin)
+		page.data
 		.map((post) => (
 			<li>
 				<a href={`/${post.slug}`}>
@@ -91,8 +50,8 @@ let myFin = 6
 
 <div class="nextPage">
 	{
-		nbPages.map((page: unknown) => (
-			<button data-buttonChange>{page}</button>
+		nbPages.map((page) => (
+			<a data-buttonChange href={`/${lang}/index/${page}#go-tags`}>{page}</a>
 		))
 	}
 	<!-- <button class="fleche">→</button> -->

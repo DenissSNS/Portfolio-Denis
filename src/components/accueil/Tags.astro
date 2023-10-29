@@ -13,7 +13,7 @@ const allTags = (await getCollection('blog'))
 	)
 );
 
-
+// FILTRE # UNIQUE
 function filtrerHashtagsUniques(tableau) {
   const hashtagsUniques = new Set();
 
@@ -33,9 +33,7 @@ function filtrerHashtagsUniques(tableau) {
 
   return tableauHashtagsUniques;
 }
-
 const hashtagsUniques = filtrerHashtagsUniques(allTags);
-
 
 ---
 
@@ -53,6 +51,20 @@ const hashtagsUniques = filtrerHashtagsUniques(allTags);
 <div data-containerTags class="tags-lines" id="go-tags">
 
 	<div class="content">
+
+
+
+		<select id="tag-select">
+			<option value="">{t('tags.all')}</option>
+			{
+				hashtagsUniques.map((eachTag:string) => (
+					<option value={eachTag}>{eachTag}</option>
+				))
+			}
+		</select>
+
+		<!-- --- -->		
+
 		<div class="itemtags">{t('tags.all')}</div>
 		<div class="itemtags">
 			<img src="/icons/search.svg" alt="search" class="svg-a-colorier" >

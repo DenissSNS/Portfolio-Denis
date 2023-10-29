@@ -125,6 +125,7 @@ ul.work {
   align-items: center;
   gap: 9px;
 
+  a,
   button {
     width: 32px;
     height: 32px;
@@ -137,6 +138,10 @@ ul.work {
     font-size: var(--fs-tags);
 
     transition: ease-in-out 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.fleche {
       width: 60px;

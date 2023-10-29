@@ -1,0 +1,72 @@
+---
+
+import "../../blogIndex.scss"
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/navbar/Header.astro';
+import Footer from '../../../components/footer/Footer.astro';
+import Retour from "../../../components/footer/Retour.astro";
+
+import Kit from "../../../components/accueil/Kit.astro";
+import Carrousel from "../../../components/accueil/Carrousel.astro";
+
+import LastPost from "../../../components/accueil/LastPost.astro";
+import LastVideo from "../../../components/accueil/LastVideo.astro";
+import Tags from "../../../components/accueil/Tags.astro";
+
+import AllPosts from '../../../components/accueil/AllPosts.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
+import { getLangFromUrl } from '../../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+
+// IMPORT LES POSTS
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog'))
+.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// PAGINATION
+export async function getStaticPaths({ paginate }) {
+
+	let tagChoisi = ""
+
+  const posts = (await getCollection('blog'))
+	.filter((each) => each.data.tags.includes(tagChoisi))
+  .sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+  // Génère des pages à partir de notre tableau, avec X par page
+  return paginate(posts, { pageSize: 9 });
+}
+// Toutes les données paginées sont passées dans la propriété "page"
+const { page } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	
+	<body>
+		<Header />
+		<Retour />
+		<main>
+			<Kit />
+			<Carrousel />
+
+			<div class="newPosts">
+				<LastPost />
+				<LastVideo />
+			</div>
+			
+			<Tags />
+
+			<AllPosts posts={posts} page={page} />
+		</main>
+		<Footer />
+	</body>
+</html>
