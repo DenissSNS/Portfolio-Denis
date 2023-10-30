@@ -11,8 +11,9 @@ import Carrousel from "../../../components/accueil/Carrousel.astro";
 
 import LastPost from "../../../components/accueil/LastPost.astro";
 import LastVideo from "../../../components/accueil/LastVideo.astro";
-import Tags from "../../../components/accueil/Tags.astro";
 
+import ContainerPostsJsx from "../../../components/postsJsx/containerPostsJsx";
+import Tags from "../../../components/accueil/Tags.astro";
 import AllPosts from '../../../components/accueil/AllPosts.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
@@ -25,6 +26,13 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog'))
 .sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// IMPORT LES TAGS
+const allTags = (await getCollection('blog'))
+.map((eachPost) => (
+		eachPost.data.tags
+	)
 );
 
 // PAGINATION
@@ -64,9 +72,11 @@ const { page } = Astro.props;
 			</div>
 			
 			<Tags />
-
 			<AllPosts posts={posts} page={page} />
+
+			<!-- <ContainerPostsJsx allPosts={posts} allTags={allTags}/> -->
+
 		</main>
 		<Footer />
 	</body>
-</html>
+</html>../../../components/postsJsx/ContainerPostsJsx
