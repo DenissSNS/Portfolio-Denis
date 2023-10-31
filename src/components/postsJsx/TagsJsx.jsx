@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./tagsJsx.scss";
 
-const TagsJsx = ({ allTags, setTagVoulu }) => {
+const TagsJsx = ({
+  allTags,
+  setTagVoulu,
+  textVoulu,
+  setTextVoulu,
+  resetSearch,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div id="go-tags" className={`tag-lines ${isOpen ? "open" : ""}`}>
       <div className="content">
-        <button className="itemtags" onClick={() => setTagVoulu("")}>
+        <button className="itemtags" onClick={() => resetSearch()}>
           All
         </button>
         <div className="itemtags">
@@ -15,6 +21,11 @@ const TagsJsx = ({ allTags, setTagVoulu }) => {
             src="/icons/search.svg"
             alt="search"
             className="svg-a-colorier"
+          />
+          <input
+            type="search"
+            value={textVoulu}
+            onChange={(e) => setTextVoulu(e.target.value)}
           />
         </div>
         <div className="divider"></div>

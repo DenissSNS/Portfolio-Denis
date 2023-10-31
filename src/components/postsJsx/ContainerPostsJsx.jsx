@@ -7,25 +7,40 @@ import EveryPostsJsx from "./EveryPostsJsx";
 
 const ContainerPostsJsx = ({ allPosts, allTags, lang }) => {
   const [tagVoulu, setTagVoulu] = useState("");
+  const [textVoulu, setTextVoulu] = useState("");
 
   // --- tri les posts selon tag ---
   const [postsTri, setPostsTri] = useState([]);
 
   const filterAllPosts = (allPosts) => {
-    const postsTri = allPosts.filter((each) =>
-      each.data.tags.includes(tagVoulu)
-    );
+    const postsTri = allPosts
+      .filter((each) => each.data.tags.includes(tagVoulu))
+      .filter((each) =>
+        each.data.title.toLowerCase().includes(textVoulu.toLowerCase())
+      );
 
     setPostsTri(postsTri);
   };
 
   useEffect(() => {
     filterAllPosts(allPosts);
-  }, [tagVoulu]);
+  }, [tagVoulu, textVoulu]);
+
+  const resetSearch = () => {
+    setTagVoulu("");
+    setTextVoulu("");
+  };
 
   return (
     <div className="containerPosts">
-      <TagsJsx allTags={allTags} setTagVoulu={setTagVoulu} client:load />
+      <TagsJsx
+        allTags={allTags}
+        setTagVoulu={setTagVoulu}
+        textVoulu={textVoulu}
+        setTextVoulu={setTextVoulu}
+        resetSearch={resetSearch}
+        client:load
+      />
       <EveryPostsJsx postsTri={postsTri} client:load />
     </div>
   );
