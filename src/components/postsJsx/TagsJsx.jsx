@@ -1,41 +1,39 @@
 import React, { useState } from "react";
+import "./tagsJsx.scss";
 
-const TagsJsx = ({ hashtagsUniques, tagVoulu, setTagVoulu }) => {
-  // toggle open
-
-  const [isOpen, setIsOpen] = useState(false); // class "open"
-
-  // renoyer dans container le # voulu
-  // translation ?
+const TagsJsx = ({ allTags, setTagVoulu }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div class="tags-lines" id="go-tags">
-      {/* <div class="content">
-        <select id="tag-select">
-          <option value="">{t("tags.all")}</option>
-          {hashtagsUniques.map((eachTag) => (
-            <option value={eachTag}>{eachTag}</option>
-          ))}
-        </select>
-
-        <div class="itemtags">{t("tags.all")}</div>
-        <div class="itemtags">
-          <img src="/icons/search.svg" alt="search" class="svg-a-colorier" />
+    <div id="go-tags" className={`tag-lines ${isOpen ? "open" : ""}`}>
+      <div className="content">
+        <button className="itemtags" onClick={() => setTagVoulu("")}>
+          All
+        </button>
+        <div className="itemtags">
+          <img
+            src="/icons/search.svg"
+            alt="search"
+            className="svg-a-colorier"
+          />
         </div>
-
-        <div class="divider"></div>
-
-        {hashtagsUniques.map((eachTag) => (
-          <div class="itemtags">{eachTag}</div>
+        <div className="divider"></div>
+        {allTags.map((eachTag, key) => (
+          <button
+            className="itemtags"
+            key={key}
+            onClick={() => setTagVoulu(eachTag)}
+          >
+            {eachTag}
+          </button>
         ))}
+        <img
+          src="/icons/main-chevron.svg"
+          alt="more"
+          className="seemore svg-a-colorier"
+          onClick={() => setIsOpen(!isOpen)}
+        />
       </div>
-
-      <img
-        data-openPanel
-        src="/icons/main-chevron.svg"
-        alt="more"
-        class="seemore svg-a-colorier"
-      /> */}
     </div>
   );
 };

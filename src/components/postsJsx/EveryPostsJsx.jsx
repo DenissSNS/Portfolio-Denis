@@ -1,34 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "./everyPostsJsx.scss";
 
-const EveryPostsJsx = () => {
-  // prendre lang dans url (2eme /)
-  // passer en props les posts
+const EveryPostsJsx = ({ postsTri }) => {
+  const [debutTab, setDebutTab] = useState(0);
+  const [finTab, setFinTab] = useState(9);
 
-  // pagination avec slice ?
+  // --- change les posts quand on clique sur pagination ---
+  const changePosts = (post) => {
+    setDebutTab((post - 1) * 9);
+    setFinTab(post * 9);
+  };
+
+  // --- la pagination ---
+  const [nbPages, setNbPages] = useState([]);
+
+  const initPagination = () => {
+    setNbPages([]); // reset tab
+    let arrayNb = []; // array qui
+    let a = 0;
+
+    for (let i = 0; i < postsTri.length; i += 9) {
+      a += 1;
+      arrayNb.push(a);
+    }
+
+    setDebutTab(0);
+    setFinTab(9);
+    setNbPages(arrayNb);
+  };
+
+  useEffect(() => {
+    initPagination();
+  }, [postsTri]);
 
   return (
-    <div>
-      {/* <ul class="work">
-        {page.data.map((post) => (
-          <li>
+    <div className="container-allposts">
+      <ul className="work">
+        {postsTri.slice(debutTab, finTab).map((post, key) => (
+          <li key={key}>
             <a href={`/${post.slug}`}>
-              <div class="img-type">
-                <img class="main-img" src={post.data.heroImage} alt="img" />
-                <span class={`type ${post.data.type.toLowerCase()}`}>
+              <div className="img-type">
+                <img className="main-img" src={post.data.heroImage} alt="img" />
+                <span className={`type ${post.data.type.toLowerCase()}`}>
                   {post.data.type.toUpperCase()}
                 </span>
               </div>
 
-              <div class="text">
-                <span class="date">
-                  · <FormattedDate date={post.data.pubDate} />
-                </span>
-                <h3 class="title">{post.data.title}</h3>
-                <p class="desc">{post.body}</p>
-                <div class="bottom">
-                  <span class="tags">{post.data.tags}</span>
+              <div className="text">
+                <time dateTime={post.data.pubDate.toISOString()}>
+                  ·{" "}
+                  {post.data.pubDate.toLocaleDateString("fr", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+                <h3 className="title">{post.data.title}</h3>
+                <p className="desc">{post.body}</p>
+                <div className="bottom">
+                  <span className="tags">{post.data.tags}</span>
                   <img
-                    class="right svg-a-colorier"
+                    className="right svg-a-colorier"
                     src="/icons/main-arrow.svg"
                     alt="arrow"
                     width="16px"
@@ -41,16 +73,17 @@ const EveryPostsJsx = () => {
         ))}
       </ul>
 
-      <div class="nextPage">
-        {nbPages.map((page) => (
-          <a data-buttonChange href={`/${lang}/index/${page}#go-tags`}>
+      <div className="nextPage">
+        {nbPages.map((page, key) => (
+          <a onClick={() => changePosts(page)} key={key}>
             {page}
           </a>
         ))}
-        <button class="fleche">→</button>
-      </div> */}
+      </div>
     </div>
   );
 };
 
 export default EveryPostsJsx;
+
+// <button className="fleche">→</button>

@@ -1,42 +1,32 @@
 import React, { useState, useEffect } from "react";
+import "./containerPostsJsx.scss";
+import "./tagsJsx.scss";
 
 import TagsJsx from "./TagsJsx";
 import EveryPostsJsx from "./EveryPostsJsx";
 
-const ContainerPostsJsx = ({ allPosts, allTags }) => {
+const ContainerPostsJsx = ({ allPosts, allTags, lang }) => {
   const [tagVoulu, setTagVoulu] = useState("");
 
-  // filtre tags unique
-  const filtrerHashtagsUniques = (tableau) => {
-    const hashtagsUniques = new Set();
+  // --- tri les posts selon tag ---
+  const [postsTri, setPostsTri] = useState([]);
 
-    tableau.forEach((element) => {
-      const hashtags = element.split(", ");
-      hashtags.forEach((hashtag) => {
-        hashtagsUniques.add(hashtag);
-      });
-    });
+  const filterAllPosts = (allPosts) => {
+    const postsTri = allPosts.filter((each) =>
+      each.data.tags.includes(tagVoulu)
+    );
 
-    const tableauHashtagsUniques = [...hashtagsUniques];
-    return tableauHashtagsUniques;
+    setPostsTri(postsTri);
   };
-  const hashtagsUniques = filtrerHashtagsUniques(allTags);
 
-  // fonction de tri sur les posts
-  // useEffect pour passer que les posts voulu au bloc de posts
-
-  const filterAllPosts = () => {
-    return postsTri;
-  };
+  useEffect(() => {
+    filterAllPosts(allPosts);
+  }, [tagVoulu]);
 
   return (
     <div className="containerPosts">
-      <TagsJsx
-        hashtagsUniques={hashtagsUniques}
-        tagVoulu={tagVoulu}
-        setTagVoulu={setTagVoulu}
-      />
-      <EveryPostsJsx tagVoulu={tagVoulu} postsTri={allPosts} />
+      <TagsJsx allTags={allTags} setTagVoulu={setTagVoulu} client:load />
+      <EveryPostsJsx postsTri={postsTri} client:load />
     </div>
   );
 };
