@@ -2,25 +2,56 @@
 
 import "./settings.scss"
 
-import ToggleDarkLight from './ToggleDarkLight.astro';
-import ToggleLanguage from './ToggleLanguage.astro';
-import ToggleSide from './ToggleSide.astro';
+import ToggleDarkLight from './options/ToggleDarkLight.astro';
+import ToggleLanguageJsx from './options/ToggleLanguageJsx.jsx';
+import ToggleSide from './options/ToggleSide.astro';
+
+import { languages } from '../../i18n/ui';
+import {getRouteFromUrl, getLangFromUrl} from "../../i18n/utils"
+const route = getRouteFromUrl(Astro.url);
+const lang = getLangFromUrl(Astro.url);
 
 ---
 
-<div class="icon-setting">
-	<img src="/icons/site-settings.svg" alt="settings" width="20px" height="17.36px" class="svg-a-colorier">
+<script>
 
-	<div class="toggleSettings">
+	const allOptions = document.querySelector('[data-allOptions]');
+	const buttonOptions = document.querySelector('[data-buttonOptions]');
 
-		<h3>· Thème :</h3>
-		<ToggleDarkLight />
+	buttonOptions?.addEventListener("click", () =>
+			allOptions?.classList.toggle("visible")
+	);
 
-		<h3>· Paramètres du site :</h3>
-		<ToggleLanguage />
+	// ---
+	
+	const closer = document.querySelector('[data-closer]');
+
+	closer?.addEventListener('click', (event) => {
+    if (event.target !== buttonOptions ){
+			allOptions?.classList.remove("visible")
+		}
+  });
+
+</script>
+
+
+<img data-buttonOptions src="/icons/site-settings.svg" alt="settings" width="20px" height="17.36px" class="svg-a-colorier button-head">
+
+<div data-allOptions class="toggleSettings">
+
+	<h3>· Thème :</h3>
+	<ToggleDarkLight />
+
+	<h3>· Paramètres du site :</h3>
+	<div class="toggler">
+		<ToggleLanguageJsx route={route} languages={languages} lang={lang} client:only/>
 		<ToggleSide />
-
 	</div>
+
+	<div data-closer class="closer">
+		<img src="/icons/close-overlay.svg" alt="close" width="15px" height="15px" class="svg-a-colorier" >
+	</div>
+
 </div>
 
 

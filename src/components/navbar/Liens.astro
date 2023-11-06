@@ -20,11 +20,10 @@ const t = useTranslations(lang);
 
 // ---
 
-	var box1 = document.querySelector('.box1');
-	var box2 = document.querySelector('.box2');
+	var box = document.querySelector('.box');
 
 	document.addEventListener('click', (event) => {
-    if (event.target !== box1 && event.target !== box2){
+    if (event.target !== box){
 			liens.forEach(eachLien => {
 				eachLien.classList.remove("visible");
 			})
@@ -36,8 +35,7 @@ const t = useTranslations(lang);
 <!-- --- -->
 
 <div data-buttonHeader class="for-arrow" >
-	<h4 class="box1">{t('nav.live')}</h4>
-	<img src="/icons/main-chevron.svg" alt="arrow" width="16px" height="15px" class="box2 svg-a-colorier">
+	<img src="/icons/site-links.svg" alt="links" width="20px" height="17.36px" class="box svg-a-colorier">
 </div>
 
 

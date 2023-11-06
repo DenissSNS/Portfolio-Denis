@@ -1,0 +1,20 @@
+.toggleLang {
+  width: 322px;
+  height: 42px;
+  background-color: var(--button);
+  border-radius: var(--radius);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 7px 8px;
+
+  select {
+    width: 130px;
+    height: 28px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+  }
+}

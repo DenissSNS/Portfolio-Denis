@@ -1,0 +1,41 @@
+.themeToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    width: 100px;
+    height: 137px;
+    padding: 4px 4px 8px 4px;
+
+    font-family: var(--font-title-medium);
+    font-size: var(--fs-date);
+    border-radius: var(--radius);
+    background-color: transparent;
+
+    border: 2px solid transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+
+    &.selected {
+      border: 2px solid var(--button);
+    }
+
+    img {
+      width: 90px;
+      height: 90px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    p {
+      line-height: 15px;
+      color: var(--color);
+    }
+  }
+}

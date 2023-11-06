@@ -1,12 +1,14 @@
 ---
+const { length } = Astro.props;
+const today = new Date();
+
 import "./carrousel.scss"
 
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
 ---
-
-
 
 <div class="carrousel">
 	
@@ -22,7 +24,7 @@ const t = useTranslations(lang);
 				{t('carrousel.voir')} 
 				<img src="/icons/main-arrow.svg" alt="arrow" width="16px" height="15px" class="svg-a-colorier" >
 			</a>
-			<img src="/fleche/arrow1.svg" alt="img-arrow1" class="fleche">
+			<img src="/fleche/arrow1.svg" alt="img-arrow1" class="fleche svg-a-colorier">
 		</div>
 
 		<div class="colonne2">
@@ -30,16 +32,16 @@ const t = useTranslations(lang);
 				<img class="active" src="/hero.gif" alt="gif">
 				<img class="static" src="/hero-static.png" alt="logo">
 			</div>
-			<img src="/fleche/arrow2.svg" alt="img-arrow2" class="fleche">
+			<img src="/fleche/arrow2.svg" alt="img-arrow2" class="fleche svg-a-colorier">
 		</div>
 
 		<div class="colonne3">
 			<div class="what">
-				<p><span>34</span>{t('carrousel.articles')} </p>
-				<p><span>6</span>{t('carrousel.etudes')} </p>
-				<p><span>21</span>{t('carrousel.videos')} </p>
+				<p><span>{length}</span>{t('carrousel.articles')} </p>
+				<p><span>{today.getFullYear()-2017}</span>{t('carrousel.etudes')} </p>
+				<p><span>5</span>{t('carrousel.videos')} </p>
 			</div>
-			<img src="/fleche/arrow3.svg" alt="img-arrow23" class="fleche">
+			<img src="/fleche/arrow3.svg" alt="img-arrow23" class="fleche svg-a-colorier">
 		</div>
 
 	</section>

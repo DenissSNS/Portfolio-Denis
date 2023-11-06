@@ -36,6 +36,8 @@
       height: 208px;
       border: none;
       border-radius: var(--radius);
+
+      object-fit: cover;
     }
 
     .info {

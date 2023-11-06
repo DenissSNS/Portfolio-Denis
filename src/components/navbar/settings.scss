@@ -1,31 +1,55 @@
-.icon-setting {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
+.button-head {
   cursor: pointer;
+}
 
-  &:hover {
-    padding: 35px 0rem; // pour rejoindre le cardre des langues
+.toggleSettings:not(.visible) {
+  display: none;
+}
 
-    .toggleSettings {
-      display: block;
-    }
+.toggleSettings.visible {
+  position: absolute;
+  top: 6rem;
+
+  width: 366px;
+  height: 366px;
+
+  background-color: var(--back);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur); // marche pas
+
+  padding: 23px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+
+  .toggler {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
-  .toggleSettings {
+  .closer {
     position: absolute;
-    top: 50px;
-    left: -200%;
-    background: var(--button);
-    border: 5px solid var(--background-cards);
-    border-radius: 12px;
-    padding: 23px;
+    top: 0;
+    right: 0;
 
-    display: none;
+    width: 40px;
+    height: 40px;
 
-    width: 366px;
-    height: 366px;
+    padding: 8px;
+    background-color: var(--button);
+    border-bottom-left-radius: var(--radius);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
   }
 }

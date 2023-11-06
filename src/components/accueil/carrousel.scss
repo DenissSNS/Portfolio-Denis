@@ -1,3 +1,9 @@
+.dark-theme .presentation {
+  &::before {
+    filter: invert(1);
+  }
+}
+
 .carrousel {
   width: 1276px;
   height: 540px;
@@ -74,10 +80,10 @@
       &::before {
         content: " ";
         position: absolute;
-        top: -200px;
-        left: -220px;
-        width: 665px;
-        height: 665px;
+        top: -260px;
+        left: -260px;
+        width: 792px;
+        height: 792px;
         opacity: 0.6;
         background-image: url("/gradient/blur-splash.png");
         background-repeat: no-repeat;

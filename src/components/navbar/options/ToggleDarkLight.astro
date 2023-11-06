@@ -1,0 +1,98 @@
+---
+import "./toggleDarkLight.scss"
+---
+
+<div class="themeToggle">
+
+  <button id="themeLight">
+    <img src="/options/lighttheme.jpg" alt="light">
+    <p>Thème clair</p>
+  </button>
+
+  <button id="themeDark">
+    <img src="/options/darktheme.jpg" alt="dark">
+    <p>Thème sombre</p>
+  </button>
+
+  <button id="themeSystem">
+    <img src="/options/system.jpg" alt="system">
+    <p>Système</p>
+  </button>
+
+</div>
+
+
+<script is:inline>
+  // is:inline => doit être mis après le html
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark-theme';
+    }
+      return 'light-theme';
+  })();
+
+  if (theme === 'light-theme') {
+    document.documentElement.classList.remove('dark-theme');
+  } else {
+    document.documentElement.classList.add('dark-theme');
+  }
+
+  window.localStorage.setItem('theme', theme);
+
+  // ---
+
+  const themeButtons = document.querySelectorAll(".themeToggle button");
+
+  const updateSelectedTheme = (selectedButton) => {
+    themeButtons.forEach((button) => {
+      button.classList.remove("selected");
+    });
+    selectedButton.classList.add("selected");
+  };
+
+  const handleToggleClickLight = () => {
+    const element = document.documentElement;
+    element.classList.remove("dark-theme");
+
+    localStorage.setItem("theme", "light-theme");
+
+    updateSelectedTheme(document.getElementById("themeLight"));
+  }
+
+  const handleToggleClickDark = () => {
+    const element = document.documentElement;
+    element.classList.add("dark-theme");
+
+    localStorage.setItem("theme", "dark-theme");
+
+    updateSelectedTheme(document.getElementById("themeDark"));
+  }
+
+  const handleToggleClickSystem = () => {
+
+    const isSysDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    if(isSysDark.matches){
+      const element = document.documentElement;
+      element.classList.add("dark-theme");
+
+      localStorage.setItem("theme", "dark-theme");
+    }
+    else{
+      const element = document.documentElement;
+      element.classList.remove("dark-theme");
+
+      localStorage.setItem("theme", "light-theme");
+    }
+
+    updateSelectedTheme(document.getElementById("themeSystem"));
+  }
+
+  document.getElementById("themeLight").addEventListener("click", handleToggleClickLight);
+  document.getElementById("themeDark").addEventListener("click", handleToggleClickDark);
+  document.getElementById("themeSystem").addEventListener("click", handleToggleClickSystem);
+
+</script>

@@ -19,15 +19,33 @@
   .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
+
+    .left,
+    .right {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .colorPick {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+    }
 
     .itemtags {
       height: 26px;
       padding: 0 8px;
       border-radius: var(--radius);
       background-color: var(--button);
+      color: var(--color);
 
       display: flex;
       justify-content: center;
@@ -39,13 +57,47 @@
       transition: ease-in-out 0.3s;
       cursor: pointer;
 
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &.colorChoose1 {
+        span {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: #ffb7dd;
+        }
+      }
+      &.colorChoose2 {
+        span {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: #a6bfd7;
+        }
+      }
+      &.colorChoose3 {
+        span {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: #a6eed7;
+        }
+      }
+
       img {
         width: 14px;
         height: 14px;
       }
 
-      &:hover {
-        transform: scale(1.05);
+      input {
+        border: none;
+        background-color: var(--button);
+      }
+
+      .closeInput {
+        display: none;
       }
     }
 
@@ -58,10 +110,6 @@
   }
 
   .seemore {
-    position: absolute;
-    right: 15px;
-    top: 12px;
-
     width: 26px;
     padding: 11px;
 

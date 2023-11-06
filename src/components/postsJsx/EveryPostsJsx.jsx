@@ -79,11 +79,10 @@ const EveryPostsJsx = ({ postsTri }) => {
             {page}
           </a>
         ))}
+        {/* <button className="fleche">→</button> */}
       </div>
     </div>
   );
 };
 
 export default EveryPostsJsx;
-
-// <button className="fleche">→</button>

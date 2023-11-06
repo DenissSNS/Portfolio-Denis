@@ -4,12 +4,7 @@
   align-items: center;
   gap: 9px;
 
-  h4 {
-    cursor: pointer;
-  }
-
   img {
-    transform: rotate(90deg);
     cursor: pointer;
   }
 }
@@ -20,13 +15,13 @@
 
 .liens.visible {
   position: absolute;
-  top: 10vh;
-  right: 1vh;
+  top: 6rem;
+  right: -13.25rem;
 
   width: 1260px;
   height: 550px;
 
-  background: var(--back);
+  background-color: var(--back);
   border-radius: var(--radius);
 
   box-shadow: var(--shadow);
