@@ -24,6 +24,9 @@
   --button-white-grey: rgb(237, 237, 237); // petits buttons
   --text-black: rgb(0, 0, 0); // text
   --text-grey-white: rgb(138, 138, 138); // text grey carrousel
+  --main-pink-white: #ffb7dd;
+  --main-blue-white: #a6bfd7;
+  --main-green-white: #a6eed7;
 
   --backrgound-black: rgb(0, 0, 0); // back
   --desc-blur-black: rgb(38, 38, 38); // blur bas description
@@ -31,6 +34,9 @@
   --button-dark-grey: rgb(85, 85, 85); // petits buttons
   --text-white: rgb(255, 255, 255); // text
   --text-grey-black: rgb(138, 138, 138); // text grey carrousel
+  --main-pink-dark: #da74aa;
+  --main-blue-dark: #70aae1;
+  --main-green-dark: #66e3bb;
 
   --test: rgb(74, 74, 74);
 
@@ -39,10 +45,6 @@
   --radius: 8px;
   --shadow: 0 0 30px rgb(0, 0, 0, 0.15);
   --blur: blur(2.5px);
-
-  --opinion: #a6bfd7;
-  --etude: #a6eed7;
-  --client: #ffb7dd;
 
   // ---
 
@@ -70,6 +72,10 @@
   --button: var(--button-white-grey);
   --color: var(--text-black);
   --text-grey: var(--text-grey-white);
+
+  --main-pink: var(--main-pink-white);
+  --main-blue: var(--main-blue-white);
+  --main-green: var(--main-green-white);
 }
 
 // dark theme
@@ -80,4 +86,8 @@
   --button: var(--button-dark-grey);
   --color: var(--text-white);
   --text-grey: var(--text-grey-black);
+
+  --main-pink: var(--main-pink-dark);
+  --main-blue: var(--main-blue-dark);
+  --main-green: var(--main-green-dark);
 }

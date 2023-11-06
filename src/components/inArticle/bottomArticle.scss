@@ -1,0 +1,15 @@
+.bottomArticle {
+  display: flex;
+  gap: 30px;
+
+  .one,
+  .two {
+    width: 435px;
+    height: 232px;
+
+    background-color: var(--back);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+  }
+}

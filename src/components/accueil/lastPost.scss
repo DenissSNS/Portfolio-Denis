@@ -51,13 +51,13 @@ a.lastPost {
       color: var(--text-black);
 
       &.client {
-        background-color: var(--client);
+        background-color: var(--main-pink);
       }
       &.opinion {
-        background-color: var(--opinion);
+        background-color: var(--main-blue);
       }
       &.étude {
-        background-color: var(--etude);
+        background-color: var(--main-green);
       }
     }
   }

@@ -53,7 +53,12 @@
       }
 
       .article {
-        background: linear-gradient(120deg, #ffb7dd, #a6bfd7, #a6eed7);
+        background: linear-gradient(
+          120deg,
+          var(--main-pink),
+          var(--main-blue),
+          var(--main-green)
+        );
         border-radius: 500px;
         font-size: var(--fs-tags);
         font-family: var(--font-title-bold);

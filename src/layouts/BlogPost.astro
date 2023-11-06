@@ -1,11 +1,12 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 
 import Header from '../components/navbar/Header.astro';
 import Footer from '../components/footer/Footer.astro';
 import Retour from '../components/footer/Retour.astro';
+
 import DCard from '../components/inArticle/DCard.astro';
+import BottomArticle from '../components/inArticle/BottomArticle.astro';
 
 import "./blogPost.scss"
 
@@ -27,27 +28,25 @@ const lang = getLangFromUrl(Astro.url);
 		
 		<main>
 			<article>
-				<Retour />
+				<Retour /> 
+
 				<div class="hero-image">
 					{heroImage && <img width={1260} height={469} src={heroImage} alt="main img" />}
 				</div>
 
-				<!-- <div class="title">
-					<div class="date">
-						<FormattedDate date={pubDate} />
-					</div>
-					<h1>{title}</h1>
-					<hr />
-				</div> -->
-
 				<div class="infos">
-					<div class="main-txt">
-						<!-- article en lui-même  -->
-						<slot />
+					
+					<div class="all-txt">
+						<div class="main-txt">
+							<!-- article en lui-même  -->
+							<slot />
+							
+						</div>
+						<BottomArticle />
 					</div>
+
 					<DCard />
 				</div>
-
 
 				<Footer />
 			</article>

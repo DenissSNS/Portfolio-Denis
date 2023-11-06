@@ -66,7 +66,7 @@
           width: 14px;
           height: 14px;
           border-radius: 50%;
-          background-color: #ffb7dd;
+          background-color: var(--main-pink);
         }
       }
       &.colorChoose2 {
@@ -74,7 +74,7 @@
           width: 14px;
           height: 14px;
           border-radius: 50%;
-          background-color: #a6bfd7;
+          background-color: var(--main-blue);
         }
       }
       &.colorChoose3 {
@@ -82,7 +82,7 @@
           width: 14px;
           height: 14px;
           border-radius: 50%;
-          background-color: #a6eed7;
+          background-color: var(--main-green);
         }
       }
 

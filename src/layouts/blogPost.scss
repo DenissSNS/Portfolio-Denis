@@ -14,24 +14,27 @@ article {
     img {
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
     }
-  }
-
-  .title {
-    text-align: center;
-    color: var(--color);
   }
 
   .infos {
     display: flex;
     gap: 30px;
 
-    .main-txt {
-      width: 930px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      background-color: var(--background-cards);
-      padding: 60px;
+    .all-txt {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .main-txt {
+        width: 930px;
+        background-color: var(--background-cards);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: var(--blur);
+        padding: 60px;
+      }
     }
   }
 }
