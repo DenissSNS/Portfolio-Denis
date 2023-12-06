@@ -5,6 +5,7 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { getLangFromUrl } from '../i18n/utils';
+import Header from "../components/navbar/Header.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -15,10 +16,26 @@ const lang = getLangFromUrl(Astro.url);
 	</head>
 	
 	<body>
+		<Header />
+
 		<main>
 
-			<p>OH NO ! This page doesn't exist.</p>
-			<a href={`/fr`}>Anyway, can you click HERE please ?</a>
+			<div class="container">
+				<div class="top">
+					<h1>404</h1>
+					<h2>cette page n'existe pas</h2>
+				</div>
+
+				<div class="middle">
+					<div class="mainBloc">a</div>
+				</div>
+
+				<div class="bottom">
+					<a href={`/fr`}>
+						RETOUR AUX ARTICLES
+					</a>
+				</div>
+			</div>
 
 		</main>
 	</body>

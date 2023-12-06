@@ -61,10 +61,10 @@ const EveryPostsJsx = ({ postsTri }) => {
                   <span className="tags">{post.data.tags}</span>
                   <img
                     className="right svg-a-colorier"
-                    src="/icons/main-arrow.svg"
+                    src="icons/main-arrow.svg"
                     alt="arrow"
-                    width="16px"
-                    height="15px"
+                    width="16"
+                    height="15"
                   />
                 </div>
               </div>

@@ -91,6 +91,11 @@
         height: 14px;
       }
 
+      label {
+        visibility: hidden;
+        width: 0;
+      }
+
       input {
         border: none;
         background-color: var(--button);

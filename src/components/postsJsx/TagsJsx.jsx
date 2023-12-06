@@ -27,14 +27,16 @@ const TagsJsx = ({
 
           <div className="itemtags">
             <img
-              src="/icons/search.svg"
+              src="icons/search.svg"
               alt="search"
               className="svg-a-colorier"
               onClick={() => setIsOpenInput(!isOpenInput)}
             />
+            <label htmlFor="search">search</label>
             <input
               className={`${isOpenInput ? "openInput" : "closeInput"}`}
               type="search"
+              id="search"
               value={textVoulu}
               onChange={(e) => setTextVoulu(e.target.value)}
             />
@@ -76,8 +78,8 @@ const TagsJsx = ({
           </div>
 
           <img
-            src="/icons/main-chevron.svg"
-            alt="more"
+            src="icons/main-chevron.svg"
+            alt="more tags"
             className="seemore svg-a-colorier"
             onClick={() => setIsOpen(!isOpen)}
           />

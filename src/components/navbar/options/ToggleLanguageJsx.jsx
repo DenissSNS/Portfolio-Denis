@@ -8,11 +8,11 @@ const ToggleLanguageJsx = ({ route, languages, lang }) => {
 
   return (
     <div className="toggleLang">
-      <label htmlFor="colonne">Langue des articles :</label>
+      <label htmlFor="language">Langue des articles :</label>
 
       <select
-        name="colonne"
-        id="colonne"
+        name="language"
+        id="language"
         value={`/${lang}/${route}`}
         onChange={(e) => handleChange(e.target.value)}
       >
