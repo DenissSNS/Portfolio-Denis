@@ -10,6 +10,13 @@ const t = useTranslations(lang);
 
 ---
 
+<script >
+	window.onload = function () {
+		var shadowRoot = document.querySelector('spline-viewer')?.shadowRoot;
+		shadowRoot?.querySelector('#logo')?.remove();
+	}
+</script>
+
 <div class="carrousel">
 	
 	<section class="presentation">
@@ -22,15 +29,15 @@ const t = useTranslations(lang);
 			</div>
 			<a href="#go-tags" class="article">
 				{t('carrousel.voir')} 
-				<img src="/icons/main-arrow.svg" alt="arrow" width="16" height="15" class="svg-a-colorier" >
+				<img src="/icons/Flèche-S.svg" alt="arrow" width="16" height="15" class="svg-a-colorier" >
 			</a>
 			<img src="/fleche/arrow1.svg" alt="img-arrow1" class="fleche svg-a-colorier">
 		</div>
 
 		<div class="colonne2">
 			<div class="logo">
-				<img class="active" src="/hero.gif" alt="gif">
-				<img class="static" src="/hero-static.png" alt="logo">
+				<script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.496/build/spline-viewer.js"></script>
+				<spline-viewer url="https://prod.spline.design/pf1JoI7LaDYYbZGY/scene.splinecode"></spline-viewer>
 			</div>
 			<img src="/fleche/arrow2.svg" alt="img-arrow2" class="fleche svg-a-colorier">
 		</div>

@@ -27,7 +27,7 @@ const TagsJsx = ({
 
           <div className="itemtags">
             <img
-              src="/icons/search.svg"
+              src="/icons/Recherche.svg"
               alt="search"
               className="svg-a-colorier"
               onClick={() => setIsOpenInput(!isOpenInput)}
@@ -78,7 +78,7 @@ const TagsJsx = ({
           </div>
 
           <img
-            src="/icons/main-chevron.svg"
+            src="/icons/Chevron-M.svg"
             alt="more tags"
             className="seemore svg-a-colorier"
             onClick={() => setIsOpen(!isOpen)}

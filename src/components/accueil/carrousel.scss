@@ -103,34 +103,8 @@
         width: 264px;
         height: 264px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          width: 348px;
-          height: 348px;
-          border-radius: 50%;
-
-          transform: rotate(0deg);
-          transition: transform 1s ease-in-out;
-
-          display: block;
-          position: absolute;
-        }
-
-        .active {
-          opacity: 0;
-        }
-
-        &:hover {
-          .static {
-            opacity: 0;
-          }
-
-          .active {
-            opacity: 1;
-          }
+        spline-viewer {
+          transform: translate(-167px, -167px);
         }
       }
 
