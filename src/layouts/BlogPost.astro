@@ -15,6 +15,8 @@ const { title, description, pubDate, heroImage, tags } = Astro.props;
 import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
+import FormattedDate from '../components/FormattedDate.astro';
+
 ---
 
 <!-- template des projets -->
@@ -25,13 +27,18 @@ const lang = getLangFromUrl(Astro.url);
 
 	<body>
 		<Header />
+		<Retour /> 
 		
 		<main>
 			<article>
-				<Retour /> 
 
 				<div class="hero-image">
 					{heroImage && <img width={1260} height={469} src={heroImage} alt="main img" />}
+				</div>
+
+				<div class="date">
+					<img src="/logo.png" alt="main-logo">
+					<p>Écrit le <FormattedDate date={pubDate} /></p>
 				</div>
 
 				<div class="infos">

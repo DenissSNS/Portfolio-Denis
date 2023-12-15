@@ -4,12 +4,37 @@
 
   .one,
   .two {
-    width: 435px;
+    width: 449.5px;
     height: 232px;
+    overflow: hidden;
 
     background-color: var(--back);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     backdrop-filter: var(--blur);
+
+    .goTo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: 25px;
+
+      img {
+        width: 16px;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .one {
+    .goTo {
+      img {
+        transform: rotate(180deg);
+      }
+    }
   }
 }

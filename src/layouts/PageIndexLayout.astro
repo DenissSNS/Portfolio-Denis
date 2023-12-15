@@ -1,21 +1,21 @@
 ---
 
-import "./blogIndex.scss"
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/navbar/Header.astro';
-import Footer from '../../components/footer/Footer.astro';
-import Retour from "../../components/footer/Retour.astro";
+import "./pageIndexLayout.scss"
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/navbar/Header.astro';
+import Footer from '../components/footer/Footer.astro';
+import Retour from "../components/footer/Retour.astro";
 
-import Kit from "../../components/accueil/Kit.astro";
-import Carrousel from "../../components/accueil/Carrousel.astro";
+import Kit from "../components/accueil/Kit.astro";
+import Carrousel from "../components/accueil/Carrousel.astro";
 
-import LastPost from "../../components/accueil/LastPost.astro";
-import LastVideo from "../../components/accueil/LastVideo.astro";
+import LastPost from "../components/accueil/LastPost.astro";
+import LastVideo from "../components/accueil/LastVideo.astro";
 
-import ContainerPostsJsx from "../../components/postsJsx/ContainerPostsJsx";
+import ContainerPostsJsx from "../components/postsJsx/ContainerPostsJsx";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getLangFromUrl } from '../../i18n/utils';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 import { getCollection } from 'astro:content';
