@@ -33,6 +33,7 @@ const allTags = (await getCollection('blog'))
 	)
 );
 
+// REND UNIQUE LES HASHTAGS 
 function filtrerHashtagsUniques(tableau) {
   const hashtagsUniques = new Set();
 
@@ -74,3 +75,4 @@ const hashtagsUniques = filtrerHashtagsUniques(allTags);
 		<Footer />
 	</body>
 </html>
+

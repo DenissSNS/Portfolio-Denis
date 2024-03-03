@@ -61,22 +61,3 @@ import FormattedDate from '../components/FormattedDate.astro';
 		</main>
 	</body>
 </html>
-
-
-<script is:inline>
-
-	const side = (() => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('side')) {
-			console.log(localStorage.getItem('side'));
-			return localStorage.getItem('side');
-		}
-			return 'droite';
-	})();
-
-	const divElement = document.querySelector('.infos');
-
-	if (side === 'gauche') {
-			divElement.classList.add('reverse');
-	}
-
-</script>

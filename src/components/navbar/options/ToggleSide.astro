@@ -1,0 +1,112 @@
+---
+import "./toggleSide.scss"
+---
+
+<div class="toggleSide">
+	<button id="sideDroite">
+    DROITE
+  </button>
+
+  <button id="sideGauche">
+    GAUCHE
+  </button>
+</div>
+
+<!-- <div class="toggleSide">
+  <label for="colonne">Colonne d’infos :</label>
+  <select
+    name="colonne"
+    id="colonne"
+    class="toggleSideSelect"
+  >
+    <option value="droite" id="sideDroite" selected>DROITE</option>
+    <option value="gauche" id="sideGauche">GAUCHE</option>
+  </select>
+</div> -->
+
+
+<script is:inline>
+
+	// const sideSelect = document.getElementById("colonne");
+
+	// const updateSelectedSide = (selectedValue) => {
+	// 	localStorage.setItem("side", selectedValue);
+
+	// 	// Mise à jour de l'interface en fonction de la sélection
+	// 	const element = document.documentElement;
+	// 	if (selectedValue === 'droite') {
+	// 		element.classList.remove("sideGauche");
+	// 	} else {
+	// 		element.classList.add("sideGauche");
+	// 	}
+	// };
+
+	// const handleSelectChange = () => {
+	// 	const selectedValue = sideSelect.value;
+	// 	updateSelectedSide(selectedValue);
+	// };
+
+	// // Initialiser la sélection en fonction de la valeur stockée
+	// sideSelect.value = (() => {
+	// 	if (typeof localStorage !== 'undefined' && localStorage.getItem('side')) {
+	// 		return localStorage.getItem('side');
+	// 	}
+	// 	return 'droite';
+	// })();
+
+	// // Écouter les changements de sélection
+	// sideSelect.addEventListener("change", handleSelectChange);
+
+	// ----------
+
+  // is:inline => doit être mis après le html
+
+  const side = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('side')) {
+      return localStorage.getItem('side');
+    }
+      return 'sideDroite';
+  })();
+
+  if (side === 'sideDroite') {
+    document.documentElement.classList.remove('sideGauche');
+  } else {
+    document.documentElement.classList.add('sideGauche');
+  }
+
+  window.localStorage.setItem('side', side);
+
+  // ---
+
+  const sideButtons = document.querySelectorAll(".toggleSide button");
+
+  const updateSelectedSide = (selectedButton) => {
+    sideButtons.forEach((button) => {
+      button.classList.remove("selected");
+    });
+    selectedButton.classList.add("selected");
+  };
+
+  const handleToggleClickDroite = () => {
+    const element = document.documentElement;
+    element.classList.remove("sideGauche");
+
+    localStorage.setItem("side", "sideDroite");
+
+    updateSelectedSide(document.getElementById("sideDroite"));
+  }
+
+  const handleToggleClickGauche = () => {
+    const element = document.documentElement;
+    element.classList.add("sideGauche");
+
+    localStorage.setItem("side", "sideGauche");
+
+    updateSelectedSide(document.getElementById("sideGauche"));
+  }
+
+  document.getElementById("sideDroite").addEventListener("click", handleToggleClickDroite);
+  document.getElementById("sideGauche").addEventListener("click", handleToggleClickGauche);
+
+</script>
+

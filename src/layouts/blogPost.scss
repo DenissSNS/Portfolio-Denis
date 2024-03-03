@@ -1,3 +1,11 @@
+.sideGauche {
+  article {
+    .infos {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
 article {
   display: flex;
   flex-direction: column;
@@ -44,10 +52,6 @@ article {
   .infos {
     display: flex;
     gap: 30px;
-
-    &.reverse {
-      flex-direction: row-reverse;
-    }
 
     .all-txt {
       display: flex;
