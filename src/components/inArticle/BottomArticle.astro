@@ -1,23 +1,50 @@
 ---
 import "./bottomArticle.scss"
+
+interface Props {
+	date: Date;
+}
+const { date } = Astro.props;
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog'))
+.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Trouver l'index du post actuel
+const currentIndex = posts.findIndex(post => post.data.pubDate === date);
+// Trouver le post précédent
+const previousPost = posts[currentIndex + 1];
+// Trouver le post suivant
+const nextPost = posts[currentIndex - 1];
+
 ---
 
 <section class="bottomArticle">
 
-	<div class="one">
-		<div class="goTo">
-			<img src="/icons/Flèche-M.svg" alt="article précédent">
-			<h3>ARTICLE PRÉCÉDENT</h3>
+	{previousPost && 
+		<div class="one">
+			<a href={`/${previousPost.slug}`} class="goTo before">
+				<img src="/icons/Flèche-M.svg" alt="article précédent" class="svg-a-colorier" />
+				<h3>{t('article.goBefore')}</h3>
+			</a>
+			<img src={previousPost.data.heroImage} alt="article précédent" />
 		</div>
-		<img src="/placeholder.jpg" alt="article précédent">
-	</div>
+	}
 
-	<div class="two">
-		<div class="goTo">
-			<h3>ARTICLE SUIVANT</h3>
-			<img src="/icons/Flèche-M.svg" alt="article suivant">
+	{nextPost && 
+		<div class="two">
+			<a href={`/${nextPost.slug}`} class="goTo after">
+				<h3>{t('article.goAfter')}</h3>
+				<img src="/icons/Flèche-M.svg" alt="article suivant" class="svg-a-colorier" />
+			</a>
+			<img src={nextPost.data.heroImage} alt="article suivant" />
 		</div>
-		<img src="/placeholder.jpg" alt="article suivant">
-	</div>
+	}
 
 </section>

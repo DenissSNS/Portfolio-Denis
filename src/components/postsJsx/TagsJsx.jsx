@@ -59,19 +59,19 @@ const TagsJsx = ({
           <div className="colorPick">
             <button
               className="colorChoose1 itemtags"
-              onClick={() => setCouleurVoulu("opinion")}
+              onClick={() => setCouleurVoulu("client")}
             >
               <span></span>
             </button>
             <button
               className="colorChoose2 itemtags"
-              onClick={() => setCouleurVoulu("étude")}
+              onClick={() => setCouleurVoulu("opinion")}
             >
               <span></span>
             </button>
             <button
               className="colorChoose3 itemtags"
-              onClick={() => setCouleurVoulu("client")}
+              onClick={() => setCouleurVoulu("étude")}
             >
               <span></span>
             </button>

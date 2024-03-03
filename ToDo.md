@@ -4,8 +4,6 @@
 - page 404
 - menu article gauche / droite
 - mettre une autre key google (pour l'instant c'est la mienne)(pour yt)
-- pourquoi ça passe en fr quand on clique sur un article
-- article suivant / précédent
 
 -----------------DESIGN-----------------
 

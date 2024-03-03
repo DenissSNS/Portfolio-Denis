@@ -32,6 +32,9 @@ export const ui = {
 
     "footer.droits": "Tous droits réservés",
     "footer.retour": "Retour en haut",
+
+    "article.goBefore": "ARTICLE PRÉCÉDENT",
+    "article.goAfter": "ARTICLE SUIVANT",
   },
 
   en: {
@@ -59,5 +62,8 @@ export const ui = {
 
     "footer.droits": "All rights reserved",
     "footer.retour": "Back to top",
+
+    "article.goBefore": "PREVIOUS ARTICLE",
+    "article.goAfter": "NEXT ARTICLE",
   },
 } as const;

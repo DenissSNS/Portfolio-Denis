@@ -1,7 +1,7 @@
 import React from "react";
 import "./toggleLanguage.scss";
 
-const ToggleLanguageJsx = ({ route, languages, lang }) => {
+const ToggleLanguage = ({ route, languages, lang }) => {
   const handleChange = (value) => {
     window.location.href = value;
   };
@@ -26,4 +26,4 @@ const ToggleLanguageJsx = ({ route, languages, lang }) => {
   );
 };
 
-export default ToggleLanguageJsx;
+export default ToggleLanguage;

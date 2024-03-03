@@ -2,7 +2,6 @@
 heroImage: "/placeholder.jpg"
 pubDate: "Jul 08 2022"
 title: "First post"
-description: "Lorem ipsum dolor sit amet"
 tags: "#oui, #non, #aaaah"
 type: "opinion"
 ---

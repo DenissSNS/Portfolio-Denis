@@ -2,7 +2,6 @@
 heroImage: "/placeholder.jpg"
 pubDate: "Oct 28 2023"
 title: "Last post"
-description: "Lorem ipsum dolor sit amet"
 tags: "#oui, #non, #aaaah"
 type: "opinion"
 ---

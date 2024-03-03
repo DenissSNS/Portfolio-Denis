@@ -1,5 +1,6 @@
 .bottomArticle {
   display: flex;
+  justify-content: center;
   gap: 30px;
 
   .one,
@@ -15,10 +16,16 @@
 
     .goTo {
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 15px;
       margin: 25px;
+
+      &.before {
+        justify-content: flex-start;
+      }
+      &.after {
+        justify-content: flex-end;
+      }
 
       img {
         width: 16px;
