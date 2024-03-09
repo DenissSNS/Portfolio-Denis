@@ -53,19 +53,25 @@
       }
 
       .article {
-        background: linear-gradient(
-          120deg,
-          var(--main-pink),
-          var(--main-blue),
-          var(--main-green)
-        );
+        // background: linear-gradient(
+        //   120deg,
+        //   var(--main-pink),
+        //   var(--main-blue),
+        //   var(--main-green)
+        // );
+        background-color: var(--main-pink);
         border-radius: 500px;
         font-size: var(--fs-tags);
         font-family: var(--font-title-bold);
         padding: 15px;
 
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
         img {
-          transform: rotate(90deg);
+          margin-left: 15px;
         }
       }
 

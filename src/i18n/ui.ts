@@ -17,7 +17,7 @@ export const ui = {
     "kit.press": "Voir le presskit",
 
     "carrousel.metier": "Étudiant, Designer",
-    "carrousel.voir": "VOIR MES ARTICLES ",
+    "carrousel.voir": "À PROPOS DE MOI",
     "carrousel.articles": "Articles",
     "carrousel.etudes": "Ans d'études",
     "carrousel.videos": "Vidéos",
@@ -47,7 +47,7 @@ export const ui = {
     "kit.press": "See the presskit",
 
     "carrousel.metier": "Student, Designer",
-    "carrousel.voir": "SEE MY ARTICLES ",
+    "carrousel.voir": "READ ABOUT ME",
     "carrousel.articles": "Articles",
     "carrousel.etudes": "Years of study",
     "carrousel.videos": "Videos",

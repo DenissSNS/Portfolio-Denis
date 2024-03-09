@@ -1,0 +1,22 @@
+---
+import "./afterPost.scss"
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<div class="afterPost">
+	<section class="logo">
+		<img src="" alt="X">
+	</section>
+	<section class="placeholder">
+		<img src="/placeholder.jpg" alt="placeholder">
+	</section>
+	<section class="text">
+		<p>SUIVEZ MOI</p>
+		<p>SUR TIKTOK</p>
+		<span>Je poste à chaque nouvel article publié sur mon site</span>
+	</section>
+</div>

@@ -1,3 +1,19 @@
+.animHero {
+  position: absolute;
+  width: 15vw;
+
+  &.left {
+    left: 0;
+    top: 190px;
+  }
+
+  &.right {
+    right: 0;
+    top: 190px;
+    z-index: 0;
+  }
+}
+
 .newPosts {
   display: flex;
   flex-wrap: wrap;
